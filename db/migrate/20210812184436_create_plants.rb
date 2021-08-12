@@ -4,7 +4,7 @@ class CreatePlants < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :temperature_max
       t.integer :temperature_min
-      t.hash :associations
+      t.json :associations, default: {}
       t.integer :harvest_day_after_planting
       t.integer :length
       t.integer :width
