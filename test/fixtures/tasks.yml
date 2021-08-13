@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delay_after_creation: 1
+  description: MyString
+  plant: one
+
+two:
+  delay_after_creation: 1
+  description: MyString
+  plant: two

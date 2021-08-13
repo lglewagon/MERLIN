@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  length_fix: 1
+  width_fix: 1
+  position_x: 1
+  position_y: 1
+  planting_date: 2021-08-12
+  harvest_date: 2021-08-12
+  active: false
+  garden: one
+  plant: one
+
+two:
+  length_fix: 1
+  width_fix: 1
+  position_x: 1
+  position_y: 1
+  planting_date: 2021-08-12
+  harvest_date: 2021-08-12
+  active: false
+  garden: two
+  plant: two
