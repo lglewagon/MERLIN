@@ -1,6 +1,7 @@
 class SquaresController < ApplicationController
 
     def new 
+        @garden = Garden.find(params[:garden_id])
         @square = Square.new
     end
 
@@ -10,7 +11,7 @@ class SquaresController < ApplicationController
     end
 
     def update 
-        @square = Square.find(params[:id])
+        @square = Square.find(params[:garden_id])
         @square.update(square_params)
     end 
 

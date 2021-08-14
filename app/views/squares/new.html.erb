@@ -2,7 +2,7 @@
 <h2>Barre de recherche</h2>
 <p>Liste des plantes par ordre alphabétique</p>
 
-<%= simple_form_for [@square] do |f| %>
+<%= simple_form_for ([@garden, @square]) do |f| %>
   <%= f.input :length_fix %>
   <%= f.input :width_fix%>
   <%= f.input :position_x %>
