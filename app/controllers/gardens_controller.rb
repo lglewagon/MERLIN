@@ -12,6 +12,7 @@ class GardensController < ApplicationController
   end
 
   def show
+    @squares = Square.all
   end
 
   def destroy
