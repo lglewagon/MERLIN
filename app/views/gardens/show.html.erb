@@ -1,7 +1,8 @@
 <h1>température % humidité vent en km/h</h1>
 <h2>liste des squares avec l'option d'accepter ou d'aller vers Square New pour changer la plante dans le square</h2>
 
-<%= @squares.each do |square|  %>
+<% @squares.each do |square|  %>
     <p> coucou</p>  
 <% end %>
-<h2>Boutton : Valider</h2>
+
+<%= link_to "Valider", new_garden_square_path(@garden_id)  %>

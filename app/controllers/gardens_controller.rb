@@ -8,13 +8,12 @@ class GardensController < ApplicationController
     @gardens = Garden.all
   end
 
-  def update
-  end
-
   def show
     @squares = Square.all
+    @garden_id = Garden.find(params[:id])
   end
-
+  
+# TODO
   def destroy
   end
 end
