@@ -1,3 +1,15 @@
 <h1>Choisi la plante que tu souhaites avoir dans ton jardin</h1>
 <h2>Barre de recherche</h2>
 <p>Liste des plantes par ordre alphabétique</p>
+
+<%= simple_form_for [@square] do |f| %>
+  <%= f.input :length_fix %>
+  <%= f.input :width_fix%>
+  <%= f.input :position_x %>
+  <%= f.input :position_y %>
+  <%= f.input :planting_date %>
+  <%= f.input :harvest_date %>
+  <%= f.input :garden_id %>
+  <%= f.input :plant_id %>
+  <%= f.submit "Submit info", class: "btn btn-primary" %>
+<% end %>

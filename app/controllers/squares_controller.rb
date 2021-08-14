@@ -5,13 +5,13 @@ class SquaresController < ApplicationController
     end
 
     def create 
-        @square = Square.new(params[:square])
+        @square = Square.new(square_params)
         @square.save
     end
 
     def update 
         @square = Square.find(params[:id])
-        @square.update(params[:square])
+        @square.update(square_params)
     end 
 
     private
