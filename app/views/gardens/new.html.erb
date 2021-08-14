@@ -2,10 +2,10 @@
 
 
 <%= simple_form_for(@garden) do |f| %>
-    <%= f.input :lenght, :integer, label: "la longueur de votre jardin" %>
-    <%= f.input :width, :integer, label: "la largeur de votre jardin" %>
+    <%= f.input :lenght, label: "la longueur de votre jardin" %>
+    <%= f.input :width, label: "la largeur de votre jardin" %>
     <%= f.input :address, label: "L'adresse du jardin" %>
-    <%= f.input :shoe_size, :integer, collection: 30..50, label: "Votre pointure" %>
+    <%= f.input :shoe_size, collection: 30..50, label: "Votre pointure" %>
     <%= f.submit "Valider", class: "btn btn-primary" %>
 <% end %>
 
