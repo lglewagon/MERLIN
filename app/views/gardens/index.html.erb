@@ -1,6 +1,12 @@
 <h1> liste des gardens</h1>
-<h2>option d'éditer chaque garden</h2>
-<h2>Option de créer un nouveau garden</h2>
+
+
+<% @gardens.each do |garden| %>
+  <%#= garden ajouter les images de plantes %>
+  <%= link_to "option d'éditer chaque garden", garden_path(garden) %>
+<% end %>
+
+<%= link_to("Option de créer un nouveau garden", new_garden_path) %>
 
 <h3>Facultatif : card pour météo</h3>
 <h3>Facultatif : card pour "Le saviez-vous?"</h3>
