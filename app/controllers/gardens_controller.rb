@@ -1,8 +1,11 @@
 class GardensController < ApplicationController
+
   def new
+    @garden = Garden.new
   end
 
   def index
+    @gardens = Garden.all
   end
 
   def update
