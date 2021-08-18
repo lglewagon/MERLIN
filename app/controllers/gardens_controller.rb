@@ -1,19 +1,29 @@
 class GardensController < ApplicationController
+  before_action :set_garden, only: [:show, :destroy]
 
   def new
     @garden = Garden.new
   end
+
+  # Manque route pour create ? http://localhost:3000/gardens --> No route matches [POST] "/gardens"
 
   def index
     @gardens = Garden.all
   end
 
   def show
+    # comment définir @squares = Square.all avec l'ID de Garden ?
     @squares = Square.all
-    @garden_id = Garden.find(params[:id])
+  end
+
+  def destroy
+    @garden.destroy
+    redirect_to gardens_path
   end
   
-# TODO
-  def destroy
+  private
+  
+  def set_garden
+    @garden = Garden.find(params[:id])
   end
 end

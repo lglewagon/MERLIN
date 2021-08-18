@@ -1,8 +1,16 @@
 <h1>température % humidité vent en km/h</h1>
-<h2>liste des squares avec l'option d'accepter ou d'aller vers Square New pour changer la plante dans le square</h2>
+<p>Ajouter API pour les températures</p>
+
+<%= @garden.area %>
 
 <% @squares.each do |square|  %>
-    <p> coucou</p>  
+    <p> coucou</p>
+    <%= square.id %>
+    <p>Ajouter image et nom du square étant = à ceux de la plante : Av faire nouvelle migration pour modifier la base de donnée</p>
+
+    <p>boutton pour supprimer lien vers Square new</p>
+    <%= link_to "X", new_garden_square_path(@garden_id) %>
 <% end %>
 
-<%= link_to "Valider", new_garden_square_path(@garden_id)  %>
+<%= link_to "Valider", new_garden_square_path(@garden_id) %>
+<%= link_to "Valider vers Index Garden", gardens_path  %>
