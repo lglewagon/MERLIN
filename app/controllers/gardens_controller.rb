@@ -13,7 +13,7 @@ class GardensController < ApplicationController
 
   def show
     # comment définir @squares = Square.all avec l'ID de Garden ?
-    @squares = Square.all
+    @squares = @garden.squares
   end
 
   def destroy
