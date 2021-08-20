@@ -1,5 +1,5 @@
 class Garden < ApplicationRecord
-    has_many :square
+    has_many :squares
     geocoded_by :address
     after_validation :geocode
 end
