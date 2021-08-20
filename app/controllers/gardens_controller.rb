@@ -3,6 +3,7 @@ class GardensController < ApplicationController
 
   def new
     @garden = Garden.new
+    @square = Square.new
   end
 
   # Manque route pour create ? http://localhost:3000/gardens --> No route matches [POST] "/gardens"
