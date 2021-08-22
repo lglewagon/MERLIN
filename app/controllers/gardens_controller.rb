@@ -3,11 +3,17 @@ class GardensController < ApplicationController
 
   def new
     @garden = Garden.new
-    @square = Square.new
   end
 
-  # Manque route pour create ? http://localhost:3000/gardens --> No route matches [POST] "/gardens"
-
+  def create
+    @garden = Garden.new(garden_params)
+    if @garden.save
+      redirect_to garden_path(@garden.id)
+    else
+      render :new
+    end
+  end
+  
   def index
     @gardens = Garden.all
   end
@@ -27,4 +33,9 @@ class GardensController < ApplicationController
   def set_garden
     @garden = Garden.find(params[:id])
   end
+
+  def garden_params
+    params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size)
+  end
+  
 end

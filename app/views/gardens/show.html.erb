@@ -9,8 +9,8 @@
     <p>Ajouter image et nom du square étant = à ceux de la plante : Av faire nouvelle migration pour modifier la base de donnée</p>
 
     <p>boutton pour supprimer lien vers Square new</p>
-    <%= link_to "X", new_garden_square_path(@garden_id) %>
+    <%= link_to "X", new_garden_square_path(@garden.id) %>
 <% end %>
 
-<%= link_to "Valider", new_garden_square_path(@garden_id) %>
+<%= link_to "Valider", new_garden_square_path(@garden.id) %>
 <%= link_to "Valider vers Index Garden", gardens_path  %>
