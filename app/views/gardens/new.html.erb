@@ -4,7 +4,7 @@
 <p id="status"></p>
 <a id="map-link" target="_blank"></a>
 
-<%= simple_form_for(@garden) do |f| %>
+<%= simple_form_for (@garden) do |f| %>
     <%= f.input :lenght, label: "la longueur de votre jardin" %>
     <%= f.input :width, label: "la largeur de votre jardin" %>
     <%= f.hidden_field :latitude, label: "latitude" %>
@@ -12,6 +12,3 @@
     <%= f.input :shoe_size, collection: 30..50, label: "Votre pointure" %>
     <%= f.submit "Valider", class: "btn btn-primary" %>
 <% end %>
-
-
-
