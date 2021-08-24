@@ -1,8 +1,10 @@
 <h1> liste des gardens</h1>
 
+<p>Ajouter API pour le climat</p>
 
 <% @gardens.each do |garden| %>
   <%#= garden ajouter les images de plantes %>
+  <%#= Ajouter tous les squares du garden en question avec les img correspondantes %>
   <%= link_to "option d'éditer chaque garden", garden_path(garden) %>
 <% end %>
 

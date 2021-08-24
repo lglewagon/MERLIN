@@ -18,4 +18,3 @@ gardens = Garden.create([{lenght: 1}, {width: 2}, {area: 1}, {latitude: 48.85837
 #@squares = Square.create!([{length_fix: 1}, {width_fix: 2}, {position_x: 3}, {position_y:4}, {active: true}])
 gardens = Garden.create!([{lenght: 1}, {width: 2}, {area: 3}])
 Plant.create!([{name: "Carotte"}])
-

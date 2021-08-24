@@ -1,4 +1,4 @@
 class Plant < ApplicationRecord
-  has_many :square
-  #has_many :square, :task
+  has_many :squares
+  #has_many :squares, :tasks
 end
