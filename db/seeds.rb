@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
+
 squares = Square.create([{length_fix: 1}, {width_fix: 2}, {position_x: 3}, {position_y: 4}, {planting_date: "12/12/12"}, {harvest_date: "11/11/13"}, {active: true}])
 squares = Square.create([{length_fix: 4}, {width_fix: 4}, {position_x: 1}, {position_y: 1}, {planting_date: "14/08/21"}, {harvest_date: "15/11/21"}, {active: false}])
 squares = Square.create([{length_fix: 10}, {width_fix: 4}, {position_x: 1}, {position_y: 10}, {planting_date: "14/08/21"}, {harvest_date: "15/11/20"}, {active: true}])
