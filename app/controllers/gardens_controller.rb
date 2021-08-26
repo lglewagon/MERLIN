@@ -1,5 +1,10 @@
+require 'rubygems'
+require 'httparty'
+
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :destroy]
+  include HTTParty
+  base_uri "api.openweathermap.org"
 
   def new
     @garden = Garden.new
@@ -21,6 +26,9 @@ class GardensController < ApplicationController
   def show
     # comment définir @squares = Square.all avec l'ID de Garden ?
     @squares = @garden.squares
+    lat = garden_latitude
+    lon = garden_longitude
+    self.class.get('/data/2.5/weather?lat={lat}&lon={lon}&appid={22bc6e143edc477a4dd14193d5981214}')
   end
 
   def destroy
