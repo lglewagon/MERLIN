@@ -1,15 +1,17 @@
 <h1>température % humidité vent en km/h</h1>
 <p>Ajouter API pour les températures</p>
 
-<%= @garden.area %>
+<%= @garden.squares.count %>
 
 <% @squares.each do |square|  %>
-    <p> coucou</p>
-    <%= square.id %>
-    <p>Ajouter image et nom du square étant = à ceux de la plante : Av faire nouvelle migration pour modifier la base de donnée</p>
-
-    <p>boutton pour supprimer lien vers Square new</p>
-    <%= link_to "X", new_garden_square_path(@garden.id) %>
+  <%= square.plant.name %>
+  <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
+    <%= image_tag ("#{square.plant.image}.jpg") %>
+  <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
+    <%= image_tag ("#{square.plant.image}.png") %>
+  <% end %>
+  <p>boutton pour supprimer lien vers Square new</p>
+  <%= link_to "X", new_garden_square_path(@garden.id) %>
 <% end %>
 
 <%= link_to "Valider", new_garden_square_path(@garden.id) %>

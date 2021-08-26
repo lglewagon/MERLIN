@@ -36,7 +36,7 @@ class GardensController < ApplicationController
     redirect_to gardens_path
   end
   
-  private
+  private 
   
   def set_garden
     @garden = Garden.find(params[:id])
