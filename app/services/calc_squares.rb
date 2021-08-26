@@ -5,7 +5,8 @@ class CalcSquares
         @width = width
         @length = length
         @square_size = square_size 
-
+        
+        # mettre ici les equivalences de pointures en cm {'pointure': cm}
         @shoe_sizes_in_cm = {'34': 21.7, '42': 27}
 
     end
