@@ -5,9 +5,13 @@ class SquaresController < ApplicationController
         @square = Square.new
     end
 
-    def create 
+    def create
         @square = Square.new(square_params)
-        @square.save
+        if @square.save
+          redirect_to garden_path(@square[:garden_id])
+        else
+          render :new
+        end
     end
 
     def update 

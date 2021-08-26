@@ -1,6 +1,18 @@
 <h1>température % humidité vent en km/h</h1>
-<h2>liste des squares avec l'option d'accepter ou d'aller vers Square New pour changer la plante dans le square</h2>
+<p>Ajouter API pour les températures</p>
+
+<%= @garden.squares.count %>
+
 <% @squares.each do |square|  %>
-    <p> coucou</p>
+  <%= square.plant.name %>
+  <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
+    <%= image_tag ("#{square.plant.image}.jpg") %>
+  <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
+    <%= image_tag ("#{square.plant.image}.png") %>
+  <% end %>
+  <p>boutton pour supprimer lien vers Square new</p>
+  <%= link_to "X", new_garden_square_path(@garden.id) %>
 <% end %>
-<h2>Boutton : Valider</h2>
+
+<%= link_to "Valider", new_garden_square_path(@garden.id) %>
+<%= link_to "Valider vers Index Garden", gardens_path  %>

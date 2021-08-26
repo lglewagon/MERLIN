@@ -7,6 +7,17 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+import { geoFindMe } from "../components/geolocalisation"
+
+document.addEventListener("turbolinks:load", function() {
+    const findMeButton = document.querySelector('#find-me')
+    console.log(findMeButton);
+    if (findMeButton) {
+        findMeButton.addEventListener('click', geoFindMe);
+    };
+})
+
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
