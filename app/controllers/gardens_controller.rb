@@ -1,3 +1,5 @@
+require 'calc_squares'
+
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :destroy]
 
@@ -7,6 +9,14 @@ class GardensController < ApplicationController
 
   def create
     @garden = Garden.new(garden_params)
+
+    a = CalcSquares.new(@garden.shoe_size, @garden.width, @garden.lenght, 1)
+    n_squares = a.output # [3,5]
+
+    @garden.width_in_squares = n_squares[0] # 3
+    @garden.height_in_squares = n_squares[1] # 5
+
+
     if @garden.save
       redirect_to garden_path(@garden.id)
     else
@@ -35,7 +45,7 @@ class GardensController < ApplicationController
   end
 
   def garden_params
-    params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size)
+    params.require(:garden).permit(:lenght, :width, :latitude, :longitude, :shoe_size)
   end
   
 end
