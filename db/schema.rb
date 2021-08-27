@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_180754) do
+ActiveRecord::Schema.define(version: 2021_08_26_191714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "gardens", force: :cascade do |t|
-    t.integer "lenght"
+    t.integer "length"
     t.integer "width"
     t.integer "area"
     t.float "latitude"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_08_24_180754) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
+    t.integer "width_in_squares"
+    t.integer "length_in_squares"
   end
 
   create_table "plants", force: :cascade do |t|
