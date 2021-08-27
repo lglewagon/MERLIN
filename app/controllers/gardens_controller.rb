@@ -1,10 +1,10 @@
-require 'rubygems'
-require 'httparty'
+require 'uri'
+require 'net/http'
+require 'openssl'
 
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :destroy]
-  include HTTParty
-  base_uri "api.openweathermap.org"
+  url = URI("https://api.tomorrow.io/v4/insights?apikey=z3VfwDg40aXSTHHZXgpVGFMgTQ8zuDtZ")
 
   def new
     @garden = Garden.new
@@ -25,10 +25,8 @@ class GardensController < ApplicationController
 
   def show
     # comment définir @squares = Square.all avec l'ID de Garden ?
-    @squares = @garden.squares
-    lat = garden_latitude
-    lon = garden_longitude
-    self.class.get('/data/2.5/weather?lat={lat}&lon={lon}&appid={22bc6e143edc477a4dd14193d5981214}')
+    @garden = Garden.request_api(url)
+    Garden.request_api(url)
   end
 
   def destroy
@@ -36,7 +34,7 @@ class GardensController < ApplicationController
     redirect_to gardens_path
   end
   
-  private 
+  private
   
   def set_garden
     @garden = Garden.find(params[:id])
@@ -45,5 +43,18 @@ class GardensController < ApplicationController
   def garden_params
     params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size)
   end
-  
+
+  def request_api(url)
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+
+    request = Net::HTTP::Post.new(url)
+    request["Accept"] = 'application/json'
+    request["Content-Type"] = 'application/json'
+    request.body = "{\"severity\":\"unknown\"}"
+
+    response = http.request(request)
+    puts response.read_body
+  end
 end
+
