@@ -18,14 +18,5 @@
 <p> cuadritos largeur : <%=@garden.width_in_squares  %></p>
 <p> cuadritos longueur : <%=@garden.length_in_squares  %></p>
 
-<p> My garden weather : <%=@weather.get_weather  %></p>
+<p> My garden weather : <%=@weather%></p>
 
-
-
-<p id="weather"></p>
-
-<script>
-const txt = weather.get_weather.to_json
-const obj = JSON.parse(txt);
-document.getElementById("weather").innerHTML = obj.humidity + ", " + obj.precipitationProbability + ", " + obj.moonPhase + ", " + obj.precipitationType + ", " + obj.temperature  + ", " + obj.windSpeed + ", " + obj.windDirection;
-</script>

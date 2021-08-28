@@ -11,7 +11,7 @@ class RequestWeather
 
     end
 
-    def get_weather
+    def call
         start_time = DateTime.now
         end_time = DateTime.now + 1.day
         api_key = "z3VfwDg40aXSTHHZXgpVGFMgTQ8zuDtZ"
