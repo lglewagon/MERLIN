@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  lenght: 1
+  length: 1
   width: 1
   area: 1
   latitude: 1
@@ -12,7 +12,7 @@ one:
   shoe_size: 1
 
 two:
-  lenght: 1
+  length: 1
   width: 1
   area: 1
   latitude: 1

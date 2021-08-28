@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #@squares = Square.create!([{length_fix: 1}, {width_fix: 2}, {position_x: 3}, {position_y:4}, {active: true}])
-gardens = Garden.create!([{lenght: 1}, {width: 2}, {area: 3}])
+gardens = Garden.create!([{length: 1}, {width: 2}, {area: 3}])
 Plant.create!(name: "Carotte", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 30, length: 5, width: 5, sunshine: 2, image: 'carotte')
 Plant.create!(name: "Artichaut", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 30, length: 5, width: 5, sunshine: 2, image: 'artichaut')
 Plant.create!(name: "Haricot", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 30, length: 5, width: 5, sunshine: 2, image: 'haricot')
