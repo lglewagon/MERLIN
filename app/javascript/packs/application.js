@@ -22,13 +22,24 @@ document.addEventListener("turbolinks:load", function() {
 // ------> Afficher la valeur du range de garden new
 document.addEventListener('DOMContentLoaded', function() {
 
-    var slider = document.getElementById("widthInFeet"); // input
-    var displayer = document.getElementById("rangeValue"); // div !
+    var slider = document.getElementById("garden_width"); // input
+    var displayer = document.getElementById("widthValue"); // div !
+
+    displayer.innerText = slider.value
  
     slider.addEventListener("change", function() {
         var value = slider.value
-
         displayer.innerText = value
+    })
+
+    var slider2 = document.getElementById("garden_length"); // input
+    var displayer2 = document.getElementById("lengthValue"); // div !
+
+    displayer2.innerText = slider2.value
+ 
+    slider2.addEventListener("change", function() {
+        var value = slider2.value
+        displayer2.innerText = value
     })
 })
 
