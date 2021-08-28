@@ -11,26 +11,23 @@
 
     <%# range %>
     <div>
-        <label for="widthInFeet" class="form-label">Largeur en pieds</label>
-        <div> 
-            <p> 1 </p>
-            <input type="range" class="custom-range" min="1" max="50" id="widthInFeet">
-            <div id="rangeValue"> </div>
-            <p> 50 </p>
+        <strong> <label for="lengthInFeet" class="form-label">Longueur en pieds</label> </strong>
+        <div class="d-flex "> 
+            <div class="mr-3"> 1 </div>
+            <div class="mr-1 flex-fill"> <%= f.input :length, label: false, id:'lengthInFeet', as:'range', input_html: { min:1, max:50, class:"custom-range" }%></div>
+            <div class="ml-3"> <span id="lengthValue"> </span> pieds</div>
         </div>
     </div>
 
     <div>
-        <label for="lengthInFeet" class="form-label">Longueur en pieds</label>
-        <div> 
-            <p> 1 </p>
-            <input type="range" class="custom-range" min="1" max="50" id="lengthInFeet">
-            <div id="rangeValue"> </div>
-            <p> 50 </p>
+        <strong> <label for="widthInFeet" class="form-label">Largeur en pieds</label> </strong>
+        <div class="d-flex "> 
+            <div class="mr-3"> 1 </div>
+            <div class="mr-1 flex-fill"> <%= f.input :width, label: false, class:"custom-range", id:'widthInFeet', as:'range', input_html: { min:1, max:50 } %></div>
+            <div class="ml-3"> <span id="widthValue"> </span> pieds</div>
         </div>
     </div>
 
-    <%= f.input :width, label: "Mesurez la longueur de votre jardin en nombre de pieds" %>
 
     <%= f.hidden_field :latitude, label: "latitude" %>
     <%= f.hidden_field :longitude, label: "longitude" %>
