@@ -78,11 +78,8 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
-<<<<<<< HEAD
     excon (0.85.0)
-=======
     execjs (2.8.1)
->>>>>>> master
     ffi (1.15.3)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
