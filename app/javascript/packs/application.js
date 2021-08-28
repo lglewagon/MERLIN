@@ -10,6 +10,7 @@ require("@rails/activestorage").start()
 require("channels")
 import { geoFindMe } from "../components/geolocalisation"
 
+
 document.addEventListener("turbolinks:load", function() {
     const findMeButton = document.querySelector('#find-me')
     console.log(findMeButton);
@@ -17,6 +18,20 @@ document.addEventListener("turbolinks:load", function() {
         findMeButton.addEventListener('click', geoFindMe);
     };
 })
+
+// ------> Afficher la valeur du range de garden new
+document.addEventListener('DOMContentLoaded', function() {
+
+    var slider = document.getElementById("widthInFeet"); // input
+    var displayer = document.getElementById("rangeValue"); // div !
+ 
+    slider.addEventListener("change", function() {
+        var value = slider.value
+
+        displayer.innerText = value
+    })
+})
+
 
 
 

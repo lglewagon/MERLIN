@@ -7,7 +7,19 @@
 
 <%= simple_form_for (@garden) do |f| %>
 
-    <%= f.input :length, label: "Mesurez la largeur de votre jardin en nombre de pieds" %>
+    <p>Renseignez la largeur et la longeur de votre espace en nombre de pieds </p>
+
+    <%# range %>
+    <div>
+        <label for="widthInFeet" class="form-label">Longueur en pieds</label>
+        <div> 
+            <p> 1 </p>
+            <input type="range" class="custom-range" min="1" max="50" id="widthInFeet">
+            <div id="rangeValue"> </div>
+            <p> 50 </p>
+        </div>
+    </div>
+
     <%= f.input :width, label: "Mesurez la longueur de votre jardin en nombre de pieds" %>
 
     <%= f.hidden_field :latitude, label: "latitude" %>
@@ -15,3 +27,4 @@
     <%= f.input :shoe_size, collection: 30..50, label: "Quelle est votre pointure ? 🧙‍♂️" %>
     <%= f.submit "Valider", class: "btn btn-primary" %>
 <% end %>
+

@@ -1,18 +1,78 @@
 // Define variables for your color scheme
 
-// // For example:
-// $red: #FD1015;
-// $blue: #167FFB;
-// $yellow: #FFC65A;
-// $orange: #E67E22;
-// $green: #1EDD88;
-// $gray: #0E0000;
-// $light-gray: #F4F4F4;
+// Valeurs de gris
 
-$red: #C4876F;
-$blue: #AAB9B0;
-$yellow: #C5D3B4;
-$orange: #C4876F;
-$green: #57823C;
-$gray: #271812;
-$light-gray: #F1F0EE;
+$white:    #F1F0EE !default;
+$gray-100: #D2AC9D !default;
+$gray-200: #C3907C !default;
+$gray-300: #AF6B51 !default;
+$gray-400: #754836 !default;
+$gray-500: #271812 !default;
+$gray-600: #1F1511 !default;
+$gray-700: #495057 !default;
+$gray-800: #1A120F !default;
+$gray-900: #16100D !default;
+$black:    #16100D !default;
+
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+) !default;
+
+// Couleurs Merlin ✨
+
+$blue:    #AAB9B0 !default;
+$brand-green:  #3A5A40 !default;
+$purple:  #5E2BFF !default;
+$pink:    #FF5E5B !default;
+$red:     #C4876F !default;
+$orange:  #CC3F0C !default;
+$yellow:  #EDC79B !default;
+$green:   #C5D3B4 !default;
+$teal:    #20c997 !default;
+$cyan:    #7EB2DD !default;
+
+$colors: (
+  "blue":       $blue,
+  "brand-green":     $brand-green,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+) !default;
+
+// Bootstrap variables Theme
+
+$primary:       $brand-green !default;
+$secondary:     $blue !default;
+$success:       $green !default;
+$info:          $blue !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+) !default;
