@@ -3,16 +3,16 @@
 // Valeurs de gris
 
 $white:    #F1F0EE !default;
-$gray-100: #D2AC9D !default;
-$gray-200: #C3907C !default;
-$gray-300: #AF6B51 !default;
-$gray-400: #754836 !default;
-$gray-500: #271812 !default;
-$gray-600: #1F1511 !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
 $gray-700: #495057 !default;
-$gray-800: #1A120F !default;
-$gray-900: #16100D !default;
-$black:    #16100D !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #271812 !default;
 
 $grays: (
   "100": $gray-100,
@@ -36,7 +36,7 @@ $red:     #C4876F !default;
 $orange:  #CC3F0C !default;
 $yellow:  #EDC79B !default;
 $green:   #C5D3B4 !default;
-$teal:    #20c997 !default;
+$teal:    #F1F4EC !default;
 $cyan:    #7EB2DD !default;
 
 $colors: (
@@ -58,7 +58,7 @@ $colors: (
 // Bootstrap variables Theme
 
 $primary:       $brand-green !default;
-$secondary:     $blue !default;
+$secondary:     $cyan !default;
 $success:       $green !default;
 $info:          $blue !default;
 $warning:       $yellow !default;
@@ -77,15 +77,6 @@ $theme-colors: (
   "dark":       $dark
 ) !default;
 
-// Styles
-
-// $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
-// $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
-// $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
-// $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
 
 $component-active-color:      $white !default;
 $component-active-bg:         $primary !default;
-
-// $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
-// $form-check-input-focus-box-shadow:       $input-btn-focus-box-shadow !default;

@@ -1,37 +1,53 @@
-<h1>Formule secrète et magique pour paramétrer l'espace disponible</h1>
-
-
-<button id="find-me">Partager ma localisation</button><br/>
-<p id="status"></p>
-<a id="map-link" target="_blank"></a>
-
-<%= simple_form_for (@garden) do |f| %>
-
-    <p>Renseignez la largeur et la longeur de votre espace en nombre de pieds </p>
-
-    <%# range %>
-    <div>
-        <strong> <label for="lengthInFeet" class="form-label">Longueur en pieds</label> </strong>
-        <div class="d-flex "> 
-            <div class="mr-3"> 1 </div>
-            <div class="mr-1 flex-fill"> <%= f.input :length, label: false, id:'lengthInFeet', as:'range', input_html: { min:1, max:50, class:"custom-range" }%></div>
-            <div class="ml-3"> <span id="lengthValue"> </span> pieds</div>
+<div class="container-fluid header">
+    <div class="row align-items-center">
+        <div class="col-auto"> 
+            <%= image_tag ('illus-tool-4.svg') %>
+        </div>
+        <div class="col col-sm-3">
+            <h5>Calculez la superficie de votre espace</h5>
         </div>
     </div>
 
-    <div>
-        <strong> <label for="widthInFeet" class="form-label">Largeur en pieds</label> </strong>
-        <div class="d-flex "> 
-            <div class="mr-3"> 1 </div>
-            <div class="mr-1 flex-fill"> <%= f.input :width, label: false, class:"custom-range", id:'widthInFeet', as:'range', input_html: { min:1, max:50 } %></div>
-            <div class="ml-3"> <span id="widthValue"> </span> pieds</div>
+</div>
+
+<div class="container">
+
+    
+
+
+    <button id="find-me" class="btn btn-outline-primary">Partager ma localisation</button><br/>
+    <p id="status"></p>
+    <a id="map-link" target="_blank"></a>
+
+    <%= simple_form_for (@garden) do |f| %>
+
+        <p>Renseignez la largeur et la longeur de votre espace en nombre de pieds </p>
+
+        <%# range %>
+        <div class="form-group">
+            <strong> <label for="formControlRange">Longueur en pieds</label> </strong>
+            <div class="d-flex"> 
+                <div class="mr-3"> 1 </div>
+                <div class="mr-1 flex-fill"> <%= f.input :length, label: false, input_html: { min:1, max:50, class:"form-control-range-secondary", type:"range" }%></div>
+                <div class="ml-3"> <span id="lengthValue"> </span> pieds</div>
+            </div>
         </div>
-    </div>
 
+        <div>
+            <strong> <label for="widthInFeet" class="form-label">Largeur en pieds</label> </strong>
+            <div class="d-flex "> 
+                <div class="mr-3"> 1 </div>
+                <div class="mr-1 flex-fill"> <%= f.input :width, label: false, class:"form-range", input_html: { min:1, max:50, class:" form-control-range", type:"range" } %></div>
+                <div class="ml-3"> <span id="widthValue"> </span> pieds</div>
+            </div>
+        </div>
 
-    <%= f.hidden_field :latitude, label: "latitude" %>
-    <%= f.hidden_field :longitude, label: "longitude" %>
-    <%= f.input :shoe_size, collection: 16..48, label: "Quelle est votre pointure ? 🧙‍♂️" %>
-    <%= f.submit "Valider", class: "btn btn-primary" %>
-<% end %>
+        <%= f.hidden_field :latitude, label: "latitude" %>
+        <%= f.hidden_field :longitude, label: "longitude" %>
+        <%= f.input :shoe_size, collection: 16..48, input_html: {class:'btn btn-outline-secondary dropdown dropdown-toggle' } %>
+        <%= f.submit "Valider", class: "btn btn-primary" %>
+    <% end %>
+
+ </div>
+
 
