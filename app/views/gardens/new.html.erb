@@ -1,4 +1,4 @@
-<h1>Commencez par dessiner votre espace disponible...</h1>
+<h1>Formule secrète et magique pour paramétrer l'espace disponible</h1>
 
 
 <button id="find-me">Partager ma localisation</button><br/>
@@ -6,10 +6,25 @@
 <a id="map-link" target="_blank"></a>
 
 <%= simple_form_for (@garden) do |f| %>
-    <%= f.input :length, label: "la longueur de votre jardin" %>
-    <%= f.input :width, label: "la largeur de votre jardin" %>
+
+    <p>Renseignez la largeur et la longeur de votre espace en nombre de pieds </p>
+
+    <%# range %>
+    <div>
+        <label for="widthInFeet" class="form-label">Longueur en pieds</label>
+        <div> 
+            <p> 1 </p>
+            <input type="range" class="custom-range" min="1" max="50" id="widthInFeet">
+            <div id="rangeValue"> </div>
+            <p> 50 </p>
+        </div>
+    </div>
+
+    <%= f.input :width, label: "Mesurez la longueur de votre jardin en nombre de pieds" %>
+
     <%= f.hidden_field :latitude, label: "latitude" %>
     <%= f.hidden_field :longitude, label: "longitude" %>
-    <%= f.input :shoe_size, collection: 16..48, label: "Votre pointure" %>
+    <%= f.input :shoe_size, collection: 16..48, label: "Quelle est votre pointure ? 🧙‍♂️" %>
     <%= f.submit "Valider", class: "btn btn-primary" %>
 <% end %>
+
