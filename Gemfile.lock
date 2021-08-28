@@ -220,11 +220,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-<<<<<<< HEAD
   excon
-=======
   font-awesome-sass (~> 5.6.1)
->>>>>>> master
   geocoder
   jbuilder (~> 2.7)
   listen (~> 3.2)
