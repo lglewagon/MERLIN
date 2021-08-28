@@ -44,7 +44,7 @@ class GardensController < ApplicationController
     # comment définir @squares = Square.all avec l'ID de Garden ?
     @squares = @garden.squares
     weather = RequestWeather.new(@garden.latitude, @garden.longitude)
-    weather.get_weather
+    p weather.get_weather.to_json
   end
 
   def destroy
