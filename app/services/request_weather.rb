@@ -20,9 +20,9 @@ class RequestWeather
 
         base_url = "https://api.tomorrow.io/v4/timelines?"
         location_str = "location=#{@latitude},#{@longitude}&"
-        fields_str = "fields=windSpeed&fields=precipitationIntensity&"
+        fields_str = "fields=humidity&fields=precipitationProbability&fields=precipitationType&fields=temperature&fields=windSpeed&fields=windDirection"
         metric_str = "units=metric&"
-        timesteps = "timesteps=1h&"
+        timesteps = "timesteps=1d&"
         start_time_str = "startTime=#{start_time.strftime(date_encoding)}&"
         end_time_str = "endTime=#{end_time.strftime(date_encoding)}&"
         apikey_str = "apikey=#{api_key}"
@@ -37,6 +37,6 @@ class RequestWeather
         request["Accept"] = 'application/json'
 
         response = http.request(request)
-        puts response.read_body
+        return response.read_body
     end
 end
