@@ -5,6 +5,9 @@ ruby '2.6.6'
 
 gem 'geocoder'
 
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass', '~> 5.6.1'
+
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4'
