@@ -1,7 +1,14 @@
+require 'uri'
+require 'net/http'
+require 'openssl'
 require 'calc_squares'
+require 'request_weather'
+
+
 
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :destroy]
+
 
   def new
     @garden = Garden.new
@@ -28,17 +35,25 @@ class GardensController < ApplicationController
     @gardens = Garden.all
   end
 
+  def find_garden(id)
+    @garden = Garden.find(id)
+  end
+
+
   def show
     # comment définir @squares = Square.all avec l'ID de Garden ?
     @squares = @garden.squares
+    weather = RequestWeather.new(@garden.latitude, @garden.longitude)
+    weather.get_weather
   end
 
   def destroy
     @garden.destroy
     redirect_to gardens_path
   end
+
   
-  private 
+  private
   
   def set_garden
     @garden = Garden.find(params[:id])
@@ -47,5 +62,7 @@ class GardensController < ApplicationController
   def garden_params
     params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size)
   end
+
   
 end
+

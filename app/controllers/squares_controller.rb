@@ -25,5 +25,4 @@ class SquaresController < ApplicationController
     params.require(:square).permit(:length_fix, :width_fix, :position_x, :position_y, :planting_date, :harvest_date, :garden_id, :plant_id)
   end
 
-
 end

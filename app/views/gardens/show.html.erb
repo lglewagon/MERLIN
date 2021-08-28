@@ -2,7 +2,6 @@
 <p>Ajouter API pour les températures</p>
 
 <%= @garden.squares.count %>
-
 <% @squares.each do |square|  %>
   <%= square.plant.name %>
   <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
@@ -13,7 +12,6 @@
   <p>boutton pour supprimer lien vers Square new</p>
   <%= link_to "X", new_garden_square_path(@garden.id) %>
 <% end %>
-
 <%= link_to "Valider", new_garden_square_path(@garden.id) %>
 <%= link_to "Valider vers Index Garden", gardens_path  %>
 
