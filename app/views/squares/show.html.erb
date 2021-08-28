@@ -1,0 +1,15 @@
+<h1><%= @plant.name %></h1>
+
+<p><%= link_to 'flèche de droite vers square suivant', square_path(@square.next) %></p>
+<p><%= link_to 'flèche de droite vers square précèdent', square_path(@square.previous) %></p>
+
+<p>progression du cycle de récolte (front: cycle menstruel) : </p>
+<p>planté le : <%=@square.planting_date %></p>
+
+<p>progression <%=@progression %>%</p>
+
+<p>--------------------facultatif ------------------</p>
+
+<h1>Ma To Do List</h1>
+
+<p> liste des tasks</p>
