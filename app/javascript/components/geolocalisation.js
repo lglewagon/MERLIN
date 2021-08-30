@@ -11,7 +11,7 @@ function geoFindMe() {
       const latitude  = position.coords.latitude;
       const longitude = position.coords.longitude;
   
-      status.textContent = 'Nous avons bien pris en compte votre position';
+      status.textContent = "✨ c'est noté";
 
       var inputLatitude = document.getElementById("garden_latitude")
       inputLatitude.value = latitude
@@ -24,9 +24,9 @@ function geoFindMe() {
     }
 
     if (!navigator.geolocation) {
-      status.textContent = 'Geolocation is not supported by your browser';
+      status.textContent = 'Ce navigateur ne me permet pas de vous localiser';
     } else {
-      status.textContent = 'Locating…';
+      status.textContent = "... sort de géolocalisation en cours";
       navigator.geolocation.getCurrentPosition(success, error);
     }
 }

@@ -41,9 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
         var value = slider2.value
         displayer2.innerText = value
     })
+
+    var slider3 = document.getElementById("garden_shoe_size"); // input
+    var displayer3 = document.getElementById("shoeSizeValue"); // div !
+
+    displayer3.innerText = slider3.value
+ 
+    slider3.addEventListener("change", function() {
+        var value = slider3.value
+        displayer3.innerText = value
+    })
 })
-
-
 
 
 
