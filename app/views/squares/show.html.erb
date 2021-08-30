@@ -6,7 +6,39 @@
 <p>progression du cycle de récolte (front: cycle menstruel) : </p>
 <p>planté le : <%=@square.planting_date %></p>
 
-<p>progression <%=@progression %>%</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class=" col-sm-6">
+            <div class="progress green">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">90%</div>
+            </div>
+        </div>
+        <div class=" col-sm-6">
+            <div class="progress light">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">75%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>progression <%=@progression.round(2) %>%</p>
 
 <p>--------------------facultatif ------------------</p>
 
