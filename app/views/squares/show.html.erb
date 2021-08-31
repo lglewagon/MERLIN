@@ -6,7 +6,17 @@
 <p>progression du cycle de récolte (front: cycle menstruel) : </p>
 <p>planté le : <%=@square.planting_date %></p>
 
-<p>progression <%=@progression %>%</p>
+<div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
+  <span class="progress-left">
+    <span class="progress-bar border-primary"></span>
+  </span>
+  <span class="progress-right">
+    <span class="progress-bar border-primary"></span>
+  </span>
+  <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+    <div class="h2 font-weight-bold"><p><%=@progression.round(0)%>%</p><sup class="small"></sup></div>
+  </div>
+</div>
 
 <p>--------------------facultatif ------------------</p>
 
