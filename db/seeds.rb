@@ -11,9 +11,9 @@ squares = Square.create([{length_fix: 1}, {width_fix: 2}, {position_x: 3}, {posi
 squares = Square.create([{length_fix: 4}, {width_fix: 4}, {position_x: 1}, {position_y: 1}, {planting_date: "14/08/21"}, {harvest_date: "15/11/21"}, {active: false}])
 squares = Square.create([{length_fix: 10}, {width_fix: 4}, {position_x: 1}, {position_y: 10}, {planting_date: "14/08/21"}, {harvest_date: "15/11/20"}, {active: true}])
 
-gardens = Garden.create([{lenght: 1}, {width: 2}, {area: 3}, {latitude: 45.729566}, {longitude: 4.827962}, {temperature_max: 25}, {temperature_min: 12}, {sunshine: 15}, {shoe_size: 43}, {address: "École normale supérieure de Lyon, Pl. de l'École, 69007 Lyon"}])
-gardens = Garden.create([{lenght: 110}, {width: 2}, {area: 10}, {latitude: 40.689249}, {longitude: -74.044500}, {temperature_max:45 }, {temperature_min: 0}, {sunshine: 5}, {shoe_size: 43}, {address: "New York, État de New York 10004, États-Unis"}])
-gardens = Garden.create([{lenght: 1}, {width: 2}, {area: 1}, {latitude: 48.858370}, {longitude: 2.294481}, {temperature_max: 25}, {temperature_min: 24}, {sunshine: 35}, {shoe_size: 37}, {address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris"}])
+gardens = Garden.create([{length: 1}, {width: 2}, {area: 3}, {latitude: 45.729566}, {longitude: 4.827962}, {temperature_max: 25}, {temperature_min: 12}, {sunshine: 15}, {shoe_size: 43}, {address: "École normale supérieure de Lyon, Pl. de l'École, 69007 Lyon"}])
+gardens = Garden.create([{length: 110}, {width: 2}, {area: 10}, {latitude: 40.689249}, {longitude: -74.044500}, {temperature_max:45 }, {temperature_min: 0}, {sunshine: 5}, {shoe_size: 43}, {address: "New York, État de New York 10004, États-Unis"}])
+gardens = Garden.create([{length: 1}, {width: 2}, {area: 1}, {latitude: 48.858370}, {longitude: 2.294481}, {temperature_max: 25}, {temperature_min: 24}, {sunshine: 35}, {shoe_size: 37}, {address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris"}])
 
 #@squares = Square.create!([{length_fix: 1}, {width_fix: 2}, {position_x: 3}, {position_y:4}, {active: true}])
 gardens = Garden.create!([{length: 1}, {width: 2}, {area: 3}])
