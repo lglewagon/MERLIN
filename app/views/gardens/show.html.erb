@@ -3,8 +3,8 @@
 
 <%= @garden.squares.count %>
 <% @squares.each do |square| 
-  <%# <%= square.plant.name %> %>
-  <%# <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %> %>
+   <%= square.plant.name %> %>
+  <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %> 
     <%= image_tag ("#{square.plant.image}.jpg") %>
   <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
     <%= image_tag ("#{square.plant.image}.png") %>
