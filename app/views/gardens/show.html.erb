@@ -1,7 +1,7 @@
 <h1>température % humidité vent en km/h</h1>
 <p>Ajouter API pour les températures</p>
 
-<%= @garden.squares.count %>
+<% @garden.squares.count %>
 <% @squares.each do |square|  %>
   <%= square.plant.name %>
   <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
