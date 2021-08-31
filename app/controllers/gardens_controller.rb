@@ -1,9 +1,3 @@
-require 'uri'
-require 'net/http'
-require 'openssl'
-require 'calc_squares'
-require 'request_weather'
-
 
 
 class GardensController < ApplicationController
@@ -43,16 +37,17 @@ class GardensController < ApplicationController
   def show
     # comment définir @squares = Square.all avec l'ID de Garden ?
     @squares = @garden.squares
-    weather = RequestWeather.new(@garden.latitude, @garden.longitude)
-    weather.get_weather
+    @weather = @garden.weather
+    @weather_rain_type = @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]
+    
   end
+
 
   def destroy
     @garden.destroy
     redirect_to gardens_path
   end
 
-  
   private
   
   def set_garden
@@ -63,6 +58,7 @@ class GardensController < ApplicationController
     params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size, :name)
   end
 
+  
   
 end
 

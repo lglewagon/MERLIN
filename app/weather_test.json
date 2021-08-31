@@ -1,0 +1,178 @@
+{
+    "data": {
+      "timelines": [
+        {
+          "timestep": "1d",
+          "startTime": "2021-08-31T06:00:00Z",
+          "endTime": "2021-09-14T06:00:00Z",
+          "intervals": [
+            {
+              "startTime": "2021-08-31T06:00:00Z",
+              "values": {
+                "humidity": 88,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 24.81,
+                "windSpeed": 5.71,
+                "windDirection": 91.5
+              }
+            },
+            {
+              "startTime": "2021-09-01T06:00:00Z",
+              "values": {
+                "humidity": 79.53,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 24.77,
+                "windSpeed": 9.7,
+                "windDirection": 80.6
+              }
+            },
+            {
+              "startTime": "2021-09-02T06:00:00Z",
+              "values": {
+                "humidity": 90.35,
+                "precipitationProbability": 65,
+                "precipitationType": 1,
+                "temperature": 24.41,
+                "windSpeed": 11.07,
+                "windDirection": 62.92
+              }
+            },
+            {
+              "startTime": "2021-09-03T06:00:00Z",
+              "values": {
+                "humidity": 85.93,
+                "precipitationProbability": 10,
+                "precipitationType": 1,
+                "temperature": 24.32,
+                "windSpeed": 3.36,
+                "windDirection": 97.84
+              }
+            },
+            {
+              "startTime": "2021-09-04T06:00:00Z",
+              "values": {
+                "humidity": 79.17,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 24.92,
+                "windSpeed": 3.64,
+                "windDirection": 137.04
+              }
+            },
+            {
+              "startTime": "2021-09-05T06:00:00Z",
+              "values": {
+                "humidity": 81.9,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 25.96,
+                "windSpeed": 5.39,
+                "windDirection": 194.9
+              }
+            },
+            {
+              "startTime": "2021-09-06T06:00:00Z",
+              "values": {
+                "humidity": 82.58,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 25.82,
+                "windSpeed": 5.88,
+                "windDirection": 156.56
+              }
+            },
+            {
+              "startTime": "2021-09-07T06:00:00Z",
+              "values": {
+                "humidity": 86,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 25.84,
+                "windSpeed": 7.44,
+                "windDirection": 129.44
+              }
+            },
+            {
+              "startTime": "2021-09-08T06:00:00Z",
+              "values": {
+                "humidity": 85.77,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 24.97,
+                "windSpeed": 6.29,
+                "windDirection": 33.6
+              }
+            },
+            {
+              "startTime": "2021-09-09T06:00:00Z",
+              "values": {
+                "humidity": 72.35,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 24.83,
+                "windSpeed": 4.04,
+                "windDirection": 95.34
+              }
+            },
+            {
+              "startTime": "2021-09-10T06:00:00Z",
+              "values": {
+                "humidity": 84.79,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 25.32,
+                "windSpeed": 5.37,
+                "windDirection": 191.8
+              }
+            },
+            {
+              "startTime": "2021-09-11T06:00:00Z",
+              "values": {
+                "humidity": 84.07,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 25.37,
+                "windSpeed": 7.13,
+                "windDirection": 179.5
+              }
+            },
+            {
+              "startTime": "2021-09-12T06:00:00Z",
+              "values": {
+                "humidity": 83.01,
+                "precipitationProbability": 50,
+                "precipitationType": 1,
+                "temperature": 24.23,
+                "windSpeed": 10.21,
+                "windDirection": 60.09
+              }
+            },
+            {
+              "startTime": "2021-09-13T06:00:00Z",
+              "values": {
+                "humidity": 69.94,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 24.22,
+                "windSpeed": 6.23,
+                "windDirection": 218.13
+              }
+            },
+            {
+              "startTime": "2021-09-14T06:00:00Z",
+              "values": {
+                "humidity": 69.78,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 23.82,
+                "windSpeed": 9.49,
+                "windDirection": 30.16
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
