@@ -12,3 +12,30 @@
 
 <h3>Facultatif : card pour météo</h3>
 <h3>Facultatif : card pour "Le saviez-vous?"</h3>
+
+<p> Humidity : <%=@weather["data"]["timelines"][0]["intervals"][0]["values"]["humidity"]%> %</p>
+<p> Temperature : <%=@weather["data"]["timelines"][0]["intervals"][0]["values"]["temperature"]%> °C</p>
+<p> The precipitation probability is : <%=@weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationProbability"]%> %</p>
+
+<p> The Wind speed : <%=@weather["data"]["timelines"][0]["intervals"][0]["values"]["windSpeed"]%> m/s</p>
+<p> The Wind direction : <%=@weather["data"]["timelines"][0]["intervals"][0]["values"]["windDirection"]%> degrees</p>
+
+<% if @weather_rain_type == 0 %>
+  <%= "The precipitation type is: N/A " %>
+<% end %>
+
+<% if @weather_rain_type == 1 %>
+  <%= "The precipitation type is: Rain"%>
+<% end %>
+
+<% if @weather_rain_type == 2 %>
+ <%= "The precipitation type is: Snow"%>
+<% end %>
+
+<% if @weather_rain_type == 3%>
+ <%= "The precipitation type is: Freezing Rain"%>
+<% end %>
+
+<% if @weather_rain_type == 4%>
+  <%= "The precipitation type is: Ice Pellets"%>
+<% end %>

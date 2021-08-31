@@ -2,21 +2,22 @@
 <p>Ajouter API pour les températures</p>
 
 <%= @garden.squares.count %>
-<% @squares.each do |square|  %>
-  <%= square.plant.name %>
-  <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
+<% @squares.each do |square| 
+  <%# <%= square.plant.name %> %>
+  <%# <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %> %>
     <%= image_tag ("#{square.plant.image}.jpg") %>
   <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
     <%= image_tag ("#{square.plant.image}.png") %>
   <% end %>
-  <p>boutton pour supprimer lien vers Square new</p>
+  <p>button pour supprimer lien vers Square new</p>
   <%= link_to "X", new_garden_square_path(@garden.id) %>
 <% end %>
 <%= link_to "Valider", new_garden_square_path(@garden.id) %>
 <%= link_to "Valider vers Index Garden", gardens_path  %>
 
 <p> cuadritos largeur : <%=@garden.width_in_squares  %></p>
-<p> cuadritos longueur : <%=@garden.length_in_squares  %></p>
+<p> cuadritos longueur : <%=@garden.length_in_squares  %></p> %>
 
-<p> My garden weather : <%=@weather%></p>
+
+
 

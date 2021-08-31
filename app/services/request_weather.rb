@@ -38,6 +38,6 @@ class RequestWeather
         request["Accept"] = 'application/json'
 
         response = http.request(request)
-        return response.read_body
+        p response.read_body
     end
 end
