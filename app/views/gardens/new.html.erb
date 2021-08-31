@@ -18,7 +18,12 @@
     <a id="map-link" target="_blank"></a>
 
     <%= simple_form_for (@garden) do |f| %>
-
+        <div class="form-group">
+            <strong> <label for="">Le nom de votre jardin</label> </strong>
+            <div class="d-flex"> 
+              <div class="mr-1 flex-fill"> <%= f.input :name, as: :text, label: false %></div>
+            </div>
+        </div>
         <p>Renseignez la largeur et la longeur de votre espace en nombre de pieds </p>
 
         <%# range %>
