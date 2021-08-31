@@ -1,3 +1,5 @@
+
+
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :destroy]
 
