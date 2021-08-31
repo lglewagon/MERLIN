@@ -11,7 +11,7 @@ class GardensController < ApplicationController
   def create
     @garden = Garden.new(garden_params)
 
-    a = CalcSquares.new(@garden.shoe_size, @garden.width, @garden.length, 1)
+    a = CalcSquares.new(@garden.shoe_size, @garden.width, @garden.length, 50) #last integer -> square_size in cm2
     n_squares = a.output # [3,5]
 
     @garden.width_in_squares = n_squares[0] # 3
@@ -55,7 +55,7 @@ class GardensController < ApplicationController
   end
 
   def garden_params
-    params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size)
+    params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size, :name)
   end
 
   

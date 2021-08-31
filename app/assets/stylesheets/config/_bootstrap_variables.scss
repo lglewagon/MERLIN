@@ -14,9 +14,10 @@ $border-radius:    2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
+// Shadows
+
 // Override other variables below!
 
-//----> Dropdowns
-$dropdown-bg:                       $yellow !default;
-$dropdown-border-color:             rgba($black, .15) !default;
-
+// --> Custom range : Garden > new 
+$custom-range-track-bg:             $green !default;
+$custom-range-track-height:         .2rem !default;

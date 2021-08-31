@@ -10,6 +10,25 @@ require("@rails/activestorage").start()
 require("channels")
 import { geoFindMe } from "../components/geolocalisation"
 
+$(function() {
+  $(".progress").each(function() {
+    var value = $(this).attr('data-value');
+    var left = $(this).find('.progress-left .progress-bar');
+    var right = $(this).find('.progress-right .progress-bar');
+    if (value > 0) {
+      if (value <= 50) {
+        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+      } else {
+        right.css('transform', 'rotate(180deg)')
+        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+      }
+    }
+  })
+  function percentageToDegrees(percentage) {
+    return percentage / 100 * 360
+  }
+});
+
 
 document.addEventListener("turbolinks:load", function() {
     const findMeButton = document.querySelector('#find-me')
@@ -41,9 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
         var value = slider2.value
         displayer2.innerText = value
     })
+
+    var slider3 = document.getElementById("garden_shoe_size"); // input
+    var displayer3 = document.getElementById("shoeSizeValue"); // div !
+
+    displayer3.innerText = slider3.value
+ 
+    slider3.addEventListener("change", function() {
+        var value = slider3.value
+        displayer3.innerText = value
+    })
 })
-
-
 
 
 
