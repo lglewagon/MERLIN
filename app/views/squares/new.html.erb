@@ -2,3 +2,11 @@
 <h2>Barre de recherche</h2>
 <p>Liste des plantes par ordre alphabétique</p>
 
+<% @plants.each do |plant|  %>
+  <h2><%= plant.name %></h2>
+  <% if File.file? "#{Rails.root}/app/assets/images/#{plant.image}.jpg" %>
+    <%= image_tag ("#{plant.image}.jpg") %>
+  <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant.image}.png" %>
+    <%= image_tag ("#{plant.image}.png") %>
+  <% end %>
+<% end %>
