@@ -1,5 +1,9 @@
 .square {
-    width: 2em;
+    $square-size: 35px;
+    width: $square-size;
+    min-width: $square-size;
+    height: $square-size; 
+    min-height: $square-size; 
     left: 25.18px;
     top: 203.46px;
     border-radius: 3px;
