@@ -3,6 +3,7 @@ class SquaresController < ApplicationController
     def new 
         @garden = Garden.find(params[:garden_id])
         @square = Square.new
+        @plants = Plant.all
     end
 
     def create

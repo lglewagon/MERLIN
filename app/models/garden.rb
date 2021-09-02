@@ -13,7 +13,7 @@ class Garden < ApplicationRecord
         # weather_before_parsing = RequestWeather.new(latitude, longitude).call
         
         # Parsing avec datas venant d'un fichier Json
-        weather_test_before_parsing = File.read('/Users/matthieudevillele/code/MatthdV/MERLIN/app/weather_test.json')
+        weather_test_before_parsing = File.read('app/weather_test.json')
 
         test_weather = JSON.parse(weather_test_before_parsing)
 
