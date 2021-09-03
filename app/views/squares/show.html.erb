@@ -1,25 +1,51 @@
-<h1><%= @plant.name %></h1>
-
-<p><%= link_to 'flèche de droite vers square suivant', square_path(@square.next) %></p>
-<p><%= link_to 'flèche de droite vers square précèdent', square_path(@square.previous) %></p>
-
-<p>progression du cycle de récolte (front: cycle menstruel) : </p>
-<p>planté le : <%=@square.planting_date %></p>
-
-<div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
-  <span class="progress-left">
-    <span class="progress-bar border-primary"></span>
-  </span>
-  <span class="progress-right">
-    <span class="progress-bar border-primary"></span>
-  </span>
-  <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-    <div class="h2 font-weight-bold"><p><%=@progression.round(0)%>%</p><sup class="small"></sup></div>
-  </div>
+<div class="container-fluid header header-new">
+    <div class="container d-flex flex-column align-items-center"> 
+        <div class="row px-5">
+            <h5><%= link_to ' ', square_path(@square.previous), class: "fas fa-angle-left text-white" %></h5><
+            <div class="pl-5 pr-5"><h5><%= @plant.name %></h5></div>
+            <h5><%= link_to ' ', square_path(@square.next), class: "fas fa-angle-right text-white" %></h5>
+        </div>
+        <div class="header-icon"> 
+          <% if File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.jpg" %>
+            <%= image_tag "#{@plant.image}.jpg", class: "header-icon-image" %>
+          <% elsif File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.png" %>
+            <%= image_tag "#{@plant.image}.png", class: "header-icon-image" %>
+          <% end %>
+        </div>
+    </div>  
 </div>
 
-<p>--------------------facultatif ------------------</p>
+<div class="container mt-2 pt-3">
+  <p>progression du cycle de récolte (front: cycle menstruel) : </p>
+  <p>planté le : <%=@square.planting_date %></p>
 
-<h1>Ma To Do List</h1>
+  <div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
+    <span class="progress-left">
+      <span class="progress-bar border-primary"></span>
+    </span>
+    <span class="progress-right">
+      <span class="progress-bar border-primary"></span>
+    </span>
+    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+      <div class="h2 font-weight-bold"><p><%=@progression.round(0)%>%</p><sup class="medium"></sup></div>
+    </div>
+  </div>
 
-<p> liste des tasks</p>
+  <p>--------------------facultatif ------------------</p>
+
+  <h1>Ma To Do List</h1>
+
+  <p> liste des tasks</p>
+
+
+  <%= link_to(gardens_path) do %>
+    <div class="d-flex justify-content-center fixed-bottom mb-5 rounded-circle">
+      <button class="btn btn-primary border-0 pl-2"> <i class="fas fa-home mr-2"></i>retour au jardin</button><br/>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
