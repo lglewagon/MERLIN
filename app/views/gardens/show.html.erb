@@ -1,11 +1,11 @@
 <div class="container-fluid header header-show">
     <div class="container d-flex flex-column align-items-center"> 
         <div class="row px-4 mb-1">
-        <h5> <%=@garden.name%></h5>
+        <h5> <%= @garden.name %></h5>
         </div>
 
         <div class="header-icon"> 
-        <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
+          <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
         </div> <!-- header-icon-->
     </div>  
 </div>
@@ -20,35 +20,39 @@
     <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
       <%= image_tag ("#{square.plant.image}.png") %>
     <% end %>
-    <p>button pour supprimer lien vers Square new</p>
-    <%= link_to "X", garden_plants_path(@garden.id) %>
+    <p>boutton pour supprimer lien vers Square new</p>
   <% end %>
+  <%= link_to "Valider", new_garden_square_path(@garden.id) %>
 
   <p> cuadritos largeur : <%=@garden.width_in_squares  %></p>
   <p> cuadritos longueur : <%=@garden.length_in_squares  %></p>
 
-  <div class="container overflow-auto d-flex flex-column">
-    <% @garden.width_in_squares.times do %> 
+  <div class="container overflow-auto garden">
+    <div class="d-flex flex-column">
+      <% @garden.width_in_squares.times do %> 
+        <div class="d-flex flex-rows"> 
+          <%@garden.length_in_squares.times do%>
+            <div class="square mx-1 my-1"> 
+              <div class=""> <!--TO DO : class square-content-->
+                <%= link_to "+", new_garden_square_path(@garden.id) %>
+              </div>
+            </div>
+          <% end %>
+        </div> <!-- @end d-flex flx-rows-->
+      <% end %>
+  </div>
 
-      <div class="d-flex flex-rows"> 
-        <%@garden.length_in_squares.times do%>
-          <div class="square mx-1 my-1"> 
-            x
-          </div>
-        <% end %>
-      </div> <!-- @end d-flex flx-rows-->
-
-
-    <% end %>
 
 
   </div> <!-- @end container body-->
 
 
+  <%# Aller sur TOUS les gardens %>
+  <%= link_to "Valider vers Index Garden", gardens_path  %> 
 
 
 
-  <%# Lien pour éditer %>
+  <%# Lien pour éditer --> garden new %>
 </div>
 
 <%# <h1>température % humidité vent en km/h</h1>
