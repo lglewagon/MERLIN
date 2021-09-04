@@ -1,7 +1,7 @@
-<div class="container-fluid header header-new">
+<div class="container-fluid header header-new"> <!--TO DO fixer les fleches -->
     <div class="container d-flex flex-column align-items-center"> 
         <div class="row px-5">
-            <h5><%= link_to ' ', square_path(@square.previous), class: "fas fa-angle-left text-white" %></h5><
+            <h5><%= link_to ' ', square_path(@square.previous), class: "fas fa-angle-left text-white" %></h5>
             <div class="pl-5 pr-5"><h5><%= @plant.name %></h5></div>
             <h5><%= link_to ' ', square_path(@square.next), class: "fas fa-angle-right text-white" %></h5>
         </div>
@@ -15,9 +15,8 @@
     </div>  
 </div>
 
-<div class="container mt-2 pt-3">
-  <p>progression du cycle de récolte (front: cycle menstruel) : </p>
-  <p>planté le : <%=@square.planting_date %></p>
+<div class="container mt-4 pt-5">
+  
 
   <div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
     <span class="progress-left">
@@ -27,23 +26,30 @@
       <span class="progress-bar border-primary"></span>
     </span>
     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-      <div class="h2 font-weight-bold"><p><%=@progression.round(0)%>%</p><sup class="medium"></sup></div>
+    <%  %> <!--Icon graine/plante/fruit-->
+      <div class="text-center">
+        <p></i> Planté le : </p>
+        <p><%=@square.planting_date %></p> <!--TO DO : formater la date dd.mm.yy-->
+        <!--Récole approximative-->
+      </div>
     </div>
   </div>
 
-  <p>--------------------facultatif ------------------</p>
+  <div class="d-flex flex-column mt-4">
+    <h4>Ma To Do List</h4>
+    <p> liste des tasks</p>
+  </div>
 
-  <h1>Ma To Do List</h1>
-
-  <p> liste des tasks</p>
 
 
   <%= link_to(gardens_path) do %>
-    <div class="d-flex justify-content-center fixed-bottom mb-5 rounded-circle">
-      <button class="btn btn-primary border-0 pl-2"> <i class="fas fa-home mr-2"></i>retour au jardin</button><br/>
+    <div class="d-flex justify-content-center fixed-bottom mb-2 bg-white">
+      <button class="btn btn-primary px-3"> <i class="fas fa-home mr-2"></i>Retour à mon jardin</button><br/>
     </div>
   <% end %>
-</div>
+
+
+</div> <!--container mt-4 pt-5 BODY-->
 
 
 

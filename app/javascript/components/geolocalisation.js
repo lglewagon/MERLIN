@@ -1,35 +1,34 @@
 
 
 function geoFindMe() {
-    const status = document.querySelector('#status');
-    const mapLink = document.querySelector('#map-link');
+  const status = document.querySelector('#status');
+  const mapLink = document.querySelector('#map-link');
 
-    mapLink.href = '';
-    mapLink.textContent = '';
+  mapLink.href = '';
+  mapLink.textContent = '';
 
-    function success(position) {
-      const latitude  = position.coords.latitude;
-      const longitude = position.coords.longitude;
-  
-      status.textContent = "✨ c'est noté";
+  function success(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
 
-      var inputLatitude = document.getElementById("garden_latitude")
-      inputLatitude.value = latitude
-      var inputLongitude = document.getElementById("garden_longitude")
-      inputLongitude.value = longitude
-    }
+    status.textContent = "✨ c'est noté";
 
-    function error() {
-      status.textContent = 'Unable to retrieve your location';
-    }
+    var inputLatitude = document.getElementById("garden_latitude")
+    inputLatitude.value = latitude
+    var inputLongitude = document.getElementById("garden_longitude")
+    inputLongitude.value = longitude
+  }
 
-    if (!navigator.geolocation) {
-      status.textContent = 'Ce navigateur ne me permet pas de vous localiser';
-    } else {
-      status.textContent = "... sort de géolocalisation en cours";
-      navigator.geolocation.getCurrentPosition(success, error);
-    }
+  function error() {
+    status.textContent = 'hehe nope...';
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = 'Ce navigateur ne me permet pas de vous localiser';
+  } else {
+    status.textContent = "... sort de géolocalisation en cours";
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
 }
-  
-export {geoFindMe}
-  
+
+export { geoFindMe }
