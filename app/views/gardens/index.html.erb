@@ -11,7 +11,6 @@
 
 <div class="container mt-4 pt-5"> 
 
-
   <div class="col-9"> 
       <% @gardens.each do |garden| %>
         <div class="card my-3">
@@ -34,16 +33,6 @@
 
       <% end %> <!-- garden.each -->
   </div>
-
-
-  
-  
-
-
-
-
-
-
 
   <%= link_to(new_garden_path) do %>
     <button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Créer un nouveau jardin </button>

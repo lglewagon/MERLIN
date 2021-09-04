@@ -18,16 +18,16 @@
     <a id="map-link" target="_blank"></a>
 
     <%= simple_form_for (@garden) do |f| %>
-        <div class="form-group">
-            <strong> <label for="">Le nom de votre jardin</label> </strong>
+        <div class="form-group mb-1">
+            <strong class="ml-2"> <label for="">Le nom de votre jardin</label> </strong>
             <div class="d-flex"> 
-              <div class="mr-1 flex-fill"> <%= f.input :name, label: false, input_html: { class:"form-control-sm", placeholder:"Potager de la maison"} %></div>
+              <div class="mr-1 flex-fill"> <%= f.input :name, label: false, input_html: { class:"form-control-sm px-2 font-size-sm", placeholder:"Exemple : Potager de la maison"} %></div>
             </div>
         </div>
 
         <p>Renseignez la largeur et la longeur de votre espace en nombre de pieds </p>
 
-        <%# range %>
+        <!--range-->
         <div class="form-group">
             <strong> <label for="formControlRange">Longueur en pieds</label> </strong>
             <div class="d-flex"> 
