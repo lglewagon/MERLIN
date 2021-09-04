@@ -12,27 +12,42 @@
 <div class="container mt-4 pt-5"> 
 
 
+  <div class="col-9"> 
+      <% @gardens.each do |garden| %>
+        <div class="card my-3">
+            <h6 class="card-header"> Garden.name
+              <%# <% if @garden.name != nil %>
+                <%# <%= @garden.name %> 
+              <%# <% end %> 
+            </h6> <!--TO DO : garden.name-->
 
-    <% @gardens.each do |garden| %>
-      
-      <div class="card" style="width: 18rem;">
-          <h6 class="card-header"> <%= Garden.name %></h6> <!--TO DO : garden.name-->
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+            <!--TO DO : garden list des plants-->
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+            <%= link_to(garden_path(garden)) do %>
+              <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i> Éditer </button>
+            <% end %>
+          </div> <!--card-body-->
 
-          <%= link_to(garden_path(garden)) do %>
-            <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i> Éditer </button>
-          <% end %>
+        </div> <!--card-->
 
-        </div> <!--card-body-->
-
-      </div>
-    <% end %> <!-- garden.each -->
+      <% end %> <!-- garden.each -->
+  </div>
 
 
+  
+  
 
-  <%= link_to("Créer un nouveau jardin", new_garden_path) %>
+
+
+
+
+
+
+  <%= link_to(new_garden_path) do %>
+    <button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Créer un nouveau jardin </button>
+  <% end %>
 
 </div> <!--Container-->
 
