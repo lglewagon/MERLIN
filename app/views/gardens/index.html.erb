@@ -1,14 +1,40 @@
-<h1> liste des gardens</h1>
+<div class="container-fluid header header-new">
+    <div class="container d-flex flex-column align-items-center"> 
+        <div class="row px-5 mb-2">
+          <h5>Vos jardins</h5>
+        </div>
+        <div class="header-icon"> 
+          <%= image_tag ('illus-tool-1.svg'), class:"header-icon-image" %>
+        </div>
+    </div>  
+</div>
 
-<p>Ajouter API pour le climat</p>
+<div class="container mt-4 pt-5"> 
 
-<% @gardens.each do |garden| %>
-  <%#= garden ajouter les images de plantes %>
-  <%#= Ajouter tous les squares du garden en question avec les img correspondantes %>
-  <%= link_to "option d'éditer chaque garden", garden_path(garden) %>
-<% end %>
 
-<%= link_to("Option de créer un nouveau garden", new_garden_path) %>
 
-<h3>Facultatif : card pour météo</h3>
-<h3>Facultatif : card pour "Le saviez-vous?"</h3>
+    <% @gardens.each do |garden| %>
+      
+      <div class="card" style="width: 18rem;">
+          <h6 class="card-header"> <%= Garden.name %></h6> <!--TO DO : garden.name-->
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+
+          <%= link_to(garden_path(garden)) do %>
+            <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i> Éditer </button>
+          <% end %>
+
+        </div> <!--card-body-->
+
+      </div>
+    <% end %> <!-- garden.each -->
+
+
+
+  <%= link_to("Créer un nouveau jardin", new_garden_path) %>
+
+</div> <!--Container-->
+
+
+
