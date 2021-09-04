@@ -16,9 +16,21 @@ class GardensController < ApplicationController
 
     @garden.width_in_squares = n_squares[0] # 3
     @garden.length_in_squares = n_squares[1] # 5
-
+    @squares = @garden.squares
 
     if @garden.save
+
+     @squares.each do |square|
+
+        Square.new(
+          length_fix: LENGTH,
+          width_fix:  WIDTH,
+          planting_date: Date.today,
+          garden_id: @garden.id,
+          plant_id: @plant.id,
+        )
+      end
+
       redirect_to garden_path(@garden.id)
     else
       render :new

@@ -5,7 +5,7 @@
         </div>
 
         <div class="header-icon"> 
-        <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
+          <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
         </div> <!-- header-icon-->
     </div>  
 </div>
@@ -20,9 +20,9 @@
     <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
       <%= image_tag ("#{square.plant.image}.png") %>
     <% end %>
-    <p>boutton pour supprimer lien vers Square new</p>
+    <p>button pour supprimer lien vers Square new</p>
   <% end %>
-  <%= link_to "Valider", new_garden_square_path(@garden.id) %>
+  <%= link_to "Valider", new_garden_path(@garden.id) %>
 
   <p> cuadritos largeur : <%=@garden.width_in_squares  %></p>
   <p> cuadritos longueur : <%=@garden.length_in_squares  %></p>
@@ -34,13 +34,15 @@
           <%@garden.length_in_squares.times do%>
             <div class="square mx-1 my-1"> 
               <div class=""> <!--TO DO : class square-content-->
-                <%= link_to "+", new_garden_square_path(@garden.id) %>
+                <%= link_to "+", garden_plants_path(@garden.id, square_id: square.id) %>
               </div>
             </div>
           <% end %>
         </div> <!-- @end d-flex flx-rows-->
       <% end %>
   </div>
+
+
 
 
 
