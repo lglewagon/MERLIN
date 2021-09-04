@@ -1,0 +1,42 @@
+<div class="container-fluid header header-square">
+   <div class="container d-flex flex-column align-items-center">
+      <div class="row px-5">
+         <h5>Choisi la plante que tu souhaites avoir dans ton jardin</h5>
+      </div>
+      <div class="header-icon"> 
+         <%= image_tag ('illus-tool-4.svg'), class:"header-icon-image" %>
+      </div>
+   </div>
+</div>
+<div class="container mt-4 pt-5">
+    <form action= "<%= garden_plants_path %>" method = "get">
+      <div class="search-form-control form-group">
+         <input class="form-control string required" type="text" name="query" id="query" />
+         <button type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i> Search
+         </button>
+      </div>
+    </form>
+
+
+   <p>Liste des plantes par ordre alphabétique</p>
+   <% @plants.each do |plant|  %>
+        <div class="card-product">
+            <% if File.file? "#{Rails.root}/app/assets/images/#{plant.image}.jpg" %>
+                <%= image_tag ("#{plant.image}.jpg") %>
+            <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant.image}.png" %>
+                <%= image_tag ("#{plant.image}.png") %>
+            <% end %>
+        <div class="card-product-infos">
+            <h2><%= plant.name %></h2>
+            <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+            
+            <%= link_to square_path(params[:square_id]), method: "patch" do %>
+                <button type="btn btn-primary">
+                    Add to my garden
+                </button>
+            <% end %>
+        </div>
+    <% end %>
+</div>
