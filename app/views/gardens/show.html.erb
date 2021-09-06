@@ -13,49 +13,62 @@
 
 <div class="container mt-4 pt-5">
 
-  <% @squares.each do |square|  %>
-    <%= square.plant.name %>
-    <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
-      <%= image_tag ("#{square.plant.image}.jpg") %>
-    <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
-      <%= image_tag ("#{square.plant.image}.png") %>
-    <% end %>
-    <p>button pour supprimer lien vers Square new</p>
-  <% end %>
+  <div class="overflow-auto garden"> 
+
+    <div class="d-flex flex-column"> 
+      <% @squares.each_with_index do |square, index| %>
+        <% i = index + 1 %>
+
+        <% if i == 1 %> 
+          <div class="d-flex flex-row"> <!--OPEN FISRT ROW-->
+        <% end %>
+
+        <div class="square mx-1 my-1"> 
+          <div class=""> <!--TO DO : class square-content-->
+            <%= i %>
+            <%= link_to "+", garden_plants_path(@garden.id, square_id: square.id) %>
+          </div>
+        </div> <!--class : square-->
+        
+        <% if i % @garden.width_in_squares == 0 %>
+          </div> <!--CLOSE FISRT ROW-->
+          <div class="d-flex flex-row"> <!--OPEN NEXT ROW-->
+        <% end %>
+
+        <% if  i == @squares.size %>
+          </div> <!--CLOSE NEXT ROW-->
+        <% end %>
+
+      <% end %> <!--@sqaures.each_with_index-->
+    </div>
+
+  </div> <!-- class : garden -->
+
+
+
+
+
+
+  
+
+
+
   <%= link_to "Valider", new_garden_path(@garden.id) %>
 
-  <p> cuadritos largeur : <%=@garden.width_in_squares  %></p>
-  <p> cuadritos longueur : <%=@garden.length_in_squares  %></p>
-
-  <div class="container overflow-auto garden">
-    <div class="d-flex flex-column">
-      <% @garden.width_in_squares.times do %> 
-        <div class="d-flex flex-rows"> 
-          <%@garden.length_in_squares.times do%>
-            <div class="square mx-1 my-1"> 
-              <div class=""> <!--TO DO : class square-content-->
-                <%= link_to "+", garden_plants_path(@garden.id, square_id: square.id) %>
-              </div>
-            </div>
-          <% end %>
-        </div> <!-- @end d-flex flx-rows-->
-      <% end %>
-  </div>
-
-
-
-
-
-  </div> <!-- @end container body-->
+  <p> carrés largeur : <%=@garden.width_in_squares  %></p>
+  <p> carrés longueur : <%=@garden.length_in_squares  %></p>
 
 
   <%# Aller sur TOUS les gardens %>
   <%= link_to "Valider vers Index Garden", gardens_path  %> 
 
-
-
   <%# Lien pour éditer --> garden new %>
-</div>
+
+</div> <!-- @end container body-->
+
+
+
+————————————————————————
 
 <%# <h1>température % humidité vent en km/h</h1>
 <p>Ajouter API pour les températures</p> %>
