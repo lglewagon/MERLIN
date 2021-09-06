@@ -1,6 +1,6 @@
 class Square < ApplicationRecord
-  belongs_to :garden
-  belongs_to :plant
+  belongs_to :garden, autosave: true
+  belongs_to :plant, required: false
 
   WIDTH = 50
   HEIGHT = 50
