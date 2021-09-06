@@ -14,6 +14,9 @@ $border-radius:    1em !default;
 $border-radius-lg: 2px;
 $border-radius-sm: $border-radius !default;
 
+//input
+$input-font-size-sm:                    $font-size-sm;
+
 // --> Custom range : Garden > new 
 $custom-range-track-bg:             $green !default;
 $custom-range-track-height:         .2rem !default;
