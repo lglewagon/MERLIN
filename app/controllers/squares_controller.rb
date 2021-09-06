@@ -27,7 +27,7 @@ class SquaresController < ApplicationController
     private
 
   def square_params
-    params.require(:square).permit( :plant_id)
+    params.permit(:plant_id)
   end
 
 end
