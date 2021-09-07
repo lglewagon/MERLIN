@@ -31,6 +31,8 @@ class GardensController < ApplicationController
   
   def index
     @gardens = Garden.all
+    @weather = @gardens.first.weather
+    @weather_rain_type = @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]
   end
 
   def find_garden(id)
@@ -41,9 +43,6 @@ class GardensController < ApplicationController
   def show
     # comment définir @squares = Square.all avec l'ID de Garden ?
     @squares = @garden.squares
-    @weather = @garden.weather
-    @weather_rain_type = @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]
-    
   end
 
 
@@ -53,16 +52,18 @@ class GardensController < ApplicationController
   end
 
   private
+
+
   
   def set_garden
     @garden = Garden.find(params[:id])
   end
 
+
+
   def garden_params
     params.require(:garden).permit(:length, :width, :latitude, :longitude, :shoe_size, :name)
   end
 
-  
-  
 end
 
