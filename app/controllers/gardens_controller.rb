@@ -42,7 +42,7 @@ class GardensController < ApplicationController
 
   def show
     # comment définir @squares = Square.all avec l'ID de Garden ?
-    @squares = @garden.squares
+    @squares = @garden.squares.order(:id)
   end
 
 
