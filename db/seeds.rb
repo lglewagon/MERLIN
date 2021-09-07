@@ -28,7 +28,7 @@ Plant.create!(name: "Laitue", temperature_max: 32, temperature_min: 0, associati
 Plant.create!(name: "Mure", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 180, length: 5, width: 5, sunshine: 2, image: 'Mure')
 Plant.create!(name: "Navet", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 164, length: 5, width: 5, sunshine: 2, image: 'Navet')
 Plant.create!(name: "Oignon", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 165, length: 5, width: 5, sunshine: 2, image: 'Oignon')
-# Plant.create!(name: "Patate", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 64, length: 5, width: 5, sunshine: 2, image: 'Patate')
+Plant.create!(name: "Patate", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 64, length: 5, width: 5, sunshine: 2, image: 'Patate')
 Plant.create!(name: "Piment", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 68, length: 5, width: 5, sunshine: 2, image: 'Piment')
 Plant.create!(name: "Pois", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 63, length: 5, width: 5, sunshine: 2, image: 'Pois')
 Plant.create!(name: "Poivron", temperature_max: 32, temperature_min: 0, associations: {}, harvest_day_after_planting: 12, length: 5, width: 5, sunshine: 2, image: 'Poivron')
