@@ -23,9 +23,10 @@
             <%= i %>
             <%= link_to "+", garden_plants_path(square_id: square.id, garden_id: @garden.id) %>
             <% if square.plant_id == nil %>
-              <%= "XX" %>
+              <%= square.id %>
             <% elsif %>
-              <%= square.plant_id %>            
+              <%= square.plant_id %>
+              <%= square.id %>
             <% end %>
           </div>
         </div> <!--class : square-->
