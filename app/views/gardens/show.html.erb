@@ -10,6 +10,16 @@
 </div>
 
 <div class="container mt-4 pt-5">
+
+  
+
+  <div class="d-flex mb-4">
+    <h6 class="mr-2 mt-1 align-self-center"> Dimmensions : </h6> 
+    <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> m X m </span>
+  </div>
+
+  <p class="text-muted fs-4 font-size-sm"><i class="fas fa-info"></i> Chaque carré représente une superficie 0.5m<sup>2.</sup> </p>  
+
   <div class="overflow-auto garden"> 
     <div class="d-flex flex-column"> 
       <% @squares.each_with_index do |square, index| %>
@@ -43,17 +53,15 @@
     </div>
   </div> <!-- class : garden -->
 
-  <p> carrés largeur : <%=@garden.width_in_squares  %></p>
-  <p> carrés longueur : <%=@garden.length_in_squares  %></p>
 
 
   <%# Aller sur TOUS les gardens %>
-  <%= link_to "Valider vers Index Garden", gardens_path  %> 
+  <%= link_to(gardens_path) do %>
+    <div class="d-flex justify-content-center mt-4">     
+      <button class="btn btn-primary"><i class="fas fa-check"></i> Valider </button>
+    </div>
+  <% end %>
 
   <%# Lien pour éditer --> garden new %>
 
 </div> <!-- @end container body-->
-
-
-
-————————————————————————

@@ -12,9 +12,11 @@ class GardensController < ApplicationController
     a = CalcSquares.new(@garden.shoe_size, @garden.width, @garden.length, 50) #last integer -> square_size in cm2
     n_squares = a.output # [3,5]
 
+    
     @garden.width_in_squares = n_squares[0] # 3
     @garden.length_in_squares = n_squares[1] # 5
-
+    
+    
     total_squares = n_squares[0]*n_squares[1]
   
 

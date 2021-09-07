@@ -46,12 +46,15 @@ class CalcSquares
   end
 
   def output
+    # convertir la pointure et le nombre de pas en cm
     @width_in_cm = @shoe_sizes_in_cm[@shoe_size.to_sym]*@width
     @length_in_cm = @shoe_sizes_in_cm[@shoe_size.to_sym]*@length
 
-    # nombre de squares pour une taille en cm
+
+    # longueur et largeur en squares à partir de la taille en cm
     @width_in_squares = (@width_in_cm/@square_size).floor
     @length_in_squares = (@length_in_cm/@square_size).floor
+    
     return [@width_in_squares, @length_in_squares]
   end
 end
