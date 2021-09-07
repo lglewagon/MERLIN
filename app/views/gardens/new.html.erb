@@ -19,7 +19,7 @@
 
     <%= simple_form_for (@garden) do |f| %>
         <div class="form-group mb-1">
-            <strong class="ml-2"> <label for="">Le nom de votre jardin</label> </strong>
+            <strong class="ml-2"> <label for="">Le nom de votre jardin *</label> </strong>
             <div class="d-flex"> 
               <div class="mr-1 flex-fill"> <%= f.input :name, label: false, input_html: { class:"form-control-sm px-2 font-size-sm", placeholder:"Exemple : Potager de la maison"} %></div>
             </div>

@@ -17,19 +17,27 @@
         <div class="card my-3">
 
           <div class="card-header"> 
-            <h6> Garden.name </h6> <!--TO DO : garden.name-->
+            <h6> <%= garden.name  %> </h6> <!--TO DO : garden.name-->
           </div>
 
-          <ul class="list-group list-group-flush">
-            <%# <%= @gardens.squares.plants.each do |plant|  %> 
-              <li class="list-group-item"> <span class="badge bg-primary rounded-pill text-white px-3">plant.name </span></li>
-            <%# <% end %> <!-- plant.each --> 
-          </ul> 
+
+          <% garden.squares.each do |square| %>
+
+            <ul class="list-group list-group-flush">
+              <%# <%= @gardens.squares.plants.each do |plant|  %> 
+                <li class="list-group-item"> 
+                <span class="badge bg-primary rounded-pill text-white px-3"> hola</span>
+                </li>
+              <%# <% end %> <!-- plant.each --> 
+            </ul> 
+
+          <% end %>
 
           <div class="card-body">
             <%= link_to(garden_path(garden)) do %>
               <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i> Éditer </button>
             <% end %>
+
             <p> Humidity : <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["humidity"]%> %</p>
             <p> Temperature : <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["temperature"]%> °C</p>
             <p> The precipitation probability is : <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationProbability"]%> %</p>
