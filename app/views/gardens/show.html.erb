@@ -3,57 +3,45 @@
         <div class="row px-4 mb-1">
         <h5> <%= @garden.name %></h5>
         </div>
-
         <div class="header-icon"> 
           <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
         </div> <!-- header-icon-->
     </div>  
 </div>
 
-
 <div class="container mt-4 pt-5">
-
   <div class="overflow-auto garden"> 
-
     <div class="d-flex flex-column"> 
       <% @squares.each_with_index do |square, index| %>
         <% i = index + 1 %>
-
         <% if i == 1 %> 
-          <div class="d-flex flex-row"> <!--OPEN FISRT ROW-->
+          <div class="d-flex flex-row"> <!--OPEN FIRST ROW-->
         <% end %>
 
         <div class="square mx-1 my-1"> 
           <div class=""> <!--TO DO : class square-content-->
             <%= i %>
-            <%= link_to "+", garden_plants_path(@garden.id, square_id: square.id) %>
+            <%= link_to "+", garden_plants_path(square_id: square.id, garden_id: @garden.id) %>
+            <% if square.plant_id == nil %>
+              <%= square.id %>
+            <% elsif %>
+              <%= square.plant_id %>
+              <%= square.id %>
+            <% end %>
           </div>
         </div> <!--class : square-->
         
         <% if i % @garden.width_in_squares == 0 %>
-          </div> <!--CLOSE FISRT ROW-->
+          </div> <!--CLOSE FIRST ROW-->
           <div class="d-flex flex-row"> <!--OPEN NEXT ROW-->
         <% end %>
 
         <% if  i == @squares.size %>
           </div> <!--CLOSE NEXT ROW-->
         <% end %>
-
       <% end %> <!--@sqaures.each_with_index-->
     </div>
-
   </div> <!-- class : garden -->
-
-
-
-
-
-
-  
-
-
-
-  <%= link_to "Valider", new_garden_path(@garden.id) %>
 
   <p> carrés largeur : <%=@garden.width_in_squares  %></p>
   <p> carrés longueur : <%=@garden.length_in_squares  %></p>
@@ -69,33 +57,3 @@
 
 
 ————————————————————————
-
-<%# <h1>température % humidité vent en km/h</h1>
-<p>Ajouter API pour les températures</p> %>
-
-<p> Humidity : <%= @weather["data"]["timelines"][0]["intervals"][0]["values"]["humidity"]%> %</p>
-<p> Temperature : <%= @weather["data"]["timelines"][0]["intervals"][0]["values"]["temperature"]%> °C</p>
-<p> The precipitation probability is : <%= @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationProbability"]%> %</p>
-
-<p> The Wind speed : <%= @weather["data"]["timelines"][0]["intervals"][0]["values"]["windSpeed"]%> m/s</p>
-<p> The Wind direction : <%= @weather["data"]["timelines"][0]["intervals"][0]["values"]["windDirection"]%> degrees</p>
-
-<% if @weather_rain_type == 0 %>
-  <%= "The precipitation type is: N/A " %>
-<% end %>
-
-<% if @weather_rain_type == 1 %>
-  <%= "The precipitation type is: Rain"%>
-<% end %>
-
-<% if @weather_rain_type == 2 %>
- <%= "The precipitation type is: Snow"%>
-<% end %>
-
-<% if @weather_rain_type == 3%>
- <%= "The precipitation type is: Freezing Rain"%>
-<% end %>
-
-<% if @weather_rain_type == 4%>
-  <%= "The precipitation type is: Ice Pellets"%>
-<% end %>
