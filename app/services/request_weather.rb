@@ -41,3 +41,4 @@ class RequestWeather
         p response.read_body
     end
 end
+
