@@ -12,26 +12,30 @@
 <div class="container mt-4 pt-5"> 
 
   <div class="col-9"> 
+
       <% @gardens.each do |garden| %>
         <div class="card my-3">
-            <h6 class="card-header"> Garden.name
-              <%# <% if @garden.name != nil %>
-                <%# <%= @garden.name %> 
-              <%# <% end %> 
-            </h6> <!--TO DO : garden.name-->
 
-            <!--TO DO : garden list des plants-->
-          <img src="..." class="card-img-top" alt="...">
+          <div class="card-header"> 
+            <h6> Garden.name </h6> <!--TO DO : garden.name-->
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <%# <%= @gardens.squares.plants.each do |plant|  %> 
+              <li class="list-group-item"> <span class="badge bg-primary rounded-pill text-white px-3">plant.name </span></li>
+            <%# <% end %> <!-- plant.each --> 
+          </ul> 
+
           <div class="card-body">
-            <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
             <%= link_to(garden_path(garden)) do %>
               <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i> Éditer </button>
             <% end %>
           </div> <!--card-body-->
 
         </div> <!--card-->
-
       <% end %> <!-- garden.each -->
+
+
   </div>
 
   <%= link_to(new_garden_path) do %>
