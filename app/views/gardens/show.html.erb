@@ -3,69 +3,76 @@
         <div class="row px-4 mb-1">
         <h5> <%= @garden.name %></h5>
         </div>
-
         <div class="header-icon"> 
           <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
         </div> <!-- header-icon-->
     </div>  
 </div>
 
-
 <div class="container mt-4 pt-5">
 
-  <div class="overflow-auto garden"> 
+  
 
+  <div class="d-flex mb-4">
+    <h6 class="mr-2 mt-1 align-self-center"> Dimmensions : </h6> 
+    <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> m X m </span>
+  </div>
+
+  <p class="text-muted fs-4 font-size-sm"><i class="fas fa-info"></i> Chaque carré représente une superficie 0.5m<sup>2.</sup> </p>  
+
+  <div class="overflow-auto garden"> 
     <div class="d-flex flex-column"> 
       <% @squares.each_with_index do |square, index| %>
         <% i = index + 1 %>
-
         <% if i == 1 %> 
-          <div class="d-flex flex-row"> <!--OPEN FISRT ROW-->
+          <div class="d-flex flex-row"> <!--OPEN FIRST ROW-->
         <% end %>
 
-        <div class="square mx-1 my-1"> 
-          <div class=""> <!--TO DO : class square-content-->
-            <%= i %>
-            <%= link_to "+", garden_plants_path(@garden.id, square_id: square.id) %>
-          </div>
+        <div class="square mx-1 my-1 d-flex justify-content-center align-items-center"> 
+
+          <div class="square-content"> 
+            <%= link_to garden_plants_path(square_id: square.id, garden_id: @garden.id) do%>
+
+              <% if square.plant_id == nil %>
+                <div class="square-empty"> 
+                  <i class="fas fa-plus"></i>
+                </div>
+              <% elsif %>
+                <div class="square-full"> 
+                    <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
+                    <%= image_tag("#{square.plant.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
+                    <% elsif File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.png" %>
+                    <%= image_tag("#{square.plant.image}.png", :class => "img-fluid rounded-start card-img" ) %>
+                <% end %>
+                </div>
+              <% end %>
+
+            <% end %>
+          </div> <!--class square-content-->
+
         </div> <!--class : square-->
         
         <% if i % @garden.width_in_squares == 0 %>
-          </div> <!--CLOSE FISRT ROW-->
+          </div> <!--CLOSE FIRST ROW-->
           <div class="d-flex flex-row"> <!--OPEN NEXT ROW-->
         <% end %>
 
         <% if  i == @squares.size %>
           </div> <!--CLOSE NEXT ROW-->
         <% end %>
-
       <% end %> <!--@sqaures.each_with_index-->
     </div>
-
   </div> <!-- class : garden -->
 
 
 
-
-
-
-  
-
-
-
-  <%= link_to "Valider", new_garden_path(@garden.id) %>
-
-  <p> carrés largeur : <%=@garden.width_in_squares  %></p>
-  <p> carrés longueur : <%=@garden.length_in_squares  %></p>
-
-
   <%# Aller sur TOUS les gardens %>
-  <%= link_to "Valider vers Index Garden", gardens_path  %> 
+  <%= link_to(gardens_path) do %>
+    <div class="d-flex justify-content-center mt-4">     
+      <button class="btn btn-primary"><i class="fas fa-check"></i> Valider </button>
+    </div>
+  <% end %>
 
   <%# Lien pour éditer --> garden new %>
 
 </div> <!-- @end container body-->
-
-
-
-————————————————————————

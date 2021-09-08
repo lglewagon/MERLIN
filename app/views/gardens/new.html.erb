@@ -13,13 +13,13 @@
 
 <div class="container mt-3 pt-5">
 
-    <button id="find-me" class="btn-link border-0 pl-0"> <i class="fas fa-map-marker-alt mr-2"></i>Partager ma localisation</button><br/>
+    <button id="find-me" class="btn btn-outline-primary btn-sm"> <i class="fas fa-map-marker-alt mr-2"></i>Partager ma localisation</button><br/>
     <p id="status"></p>
     <a id="map-link" target="_blank"></a>
 
     <%= simple_form_for (@garden) do |f| %>
         <div class="form-group mb-1">
-            <strong class="ml-2"> <label for="">Le nom de votre jardin</label> </strong>
+            <strong class="ml-2"> <label for="">Le nom de votre jardin<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex"> 
               <div class="mr-1 flex-fill"> <%= f.input :name, label: false, input_html: { class:"form-control-sm px-2 font-size-sm", placeholder:"Exemple : Potager de la maison"} %></div>
             </div>
@@ -29,7 +29,7 @@
 
         <!--range-->
         <div class="form-group">
-            <strong> <label for="formControlRange">Longueur en pieds</label> </strong>
+            <strong> <label for="formControlRange">Longueur<sup class=" ml-1 text-primary">*</sup> </label> </strong>
             <div class="d-flex"> 
                 <div class="mr-3"> 1 </div>
                 <div class="mr-1 flex-fill"> <%= f.input :length, label: false, input_html: { min:1, max:50, class:"custom-range border-0 range-field", type:"range", step:1 }%></div>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group">
-            <strong> <label for="widthInFeet" class="form-label">Largeur en pieds</label> </strong>
+            <strong> <label for="widthInFeet" class="form-label">Largeur<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex "> 
                 <div class="mr-3"> 1 </div>
                 <div class="mr-1 flex-fill"> <%= f.input :width, label: false, input_html: { min:1, max:50, class:"custom-range border-0 range-field", type:"range", step:1} %></div>
@@ -50,7 +50,7 @@
         <%= f.hidden_field :longitude, label: "longitude" %>
 
         <div class="form-group">
-            <strong> <label for="formControlRange">Quelle est votre pointure ?</label> </strong>
+            <strong> <label for="formControlRange">Quelle est votre pointure ?<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex"> 
                 <div class="mr-3"> 33</div>
                 <div class="mr-1 flex-fill"> <%= f.input :shoe_size, label: false, input_html: { min:33, max:48, class:"custom-range border-0 range-field", type:"range", step:1 }%></div>

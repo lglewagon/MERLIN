@@ -9,8 +9,6 @@
    </div>
 </div>
 
-
-
 <div class="container mt-4 pt-5">
     <form action= "<%= garden_plants_path %>" method = "get">
       <div class="search-form-control form-group">
@@ -37,7 +35,7 @@
                <div class="card-body">
                   <h6 class="card-title"><%= plant.name %></h6>
                   <%# <p class="card-text">Product description with <strong>relevant info</strong> only.</p> %>
-                  <%= link_to square_path(@garden.id, params[:square_id]), method: "patch" do %>
+                  <%= link_to square_path(id: params[:square_id], plant_id: plant.id), method: 'patch' do %>
                      <button class="btn btn-primary btn-sm"> <i class="fas fa-plus"></i> Add to my garden </button>
                   <% end %>  
                </div>

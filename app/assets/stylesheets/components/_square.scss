@@ -1,11 +1,18 @@
 .square {
-    $square-size: 40px;
+    $square-size: 60px;
+
     width: $square-size;
     min-width: $square-size;
     height: $square-size; 
     min-height: $square-size; 
-    left: 25.18px;
-    top: 203.46px;
+
+    border: 1.5px $brand-green solid;
     border-radius: 3px;
-    background: #C5D3B4;
+
+    background: $teal;
+}
+
+.square-full{
+    background: $green ;
+    mix-blend-mode: multiply;
 }
