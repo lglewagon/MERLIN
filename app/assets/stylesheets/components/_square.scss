@@ -14,8 +14,5 @@
 
 .square-full{
     background: $green ;
-    z-index: 1;
-}
-
-.square-empty{
+    mix-blend-mode: multiply;
 }
