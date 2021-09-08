@@ -1,3 +1,22 @@
 .garden{
     height: calc(110vh - 400px);
 }
+
+
+.garden::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 100px;
+}
+
+.garden::-webkit-scrollbar-track {
+    background-color: $teal;
+    border-radius: 100px;
+}
+
+.garden::-webkit-scrollbar-thumb {
+        // border: 5px solid transparent;
+        border-radius: 100px;
+        background-color: $blue;
+        background-clip: content-box;
+    }
