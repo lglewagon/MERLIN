@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_183854) do
+ActiveRecord::Schema.define(version: 2021_09_09_171855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2021_09_06_183854) do
     t.integer "width_in_squares"
     t.integer "length_in_squares"
     t.string "name"
+    t.integer "width_in_cm"
+    t.integer "length_in_cm"
   end
 
   create_table "plants", force: :cascade do |t|

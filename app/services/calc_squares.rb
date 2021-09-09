@@ -50,12 +50,11 @@ class CalcSquares
     @width_in_cm = @shoe_sizes_in_cm[@shoe_size.to_sym]*@width
     @length_in_cm = @shoe_sizes_in_cm[@shoe_size.to_sym]*@length
 
-
     # longueur et largeur en squares à partir de la taille en cm
     @width_in_squares = (@width_in_cm/@square_size).floor
     @length_in_squares = (@length_in_cm/@square_size).floor
     
-    return [@width_in_squares, @length_in_squares]
+    return [@width_in_squares, @length_in_squares, @width_in_cm, @length_in_cm]
   end
 end
 
