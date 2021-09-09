@@ -30,19 +30,29 @@
                   <%= image_tag("#{plant.image}.png", :class => "img-fluid rounded-start card-img" ) %>
                <% end %>
             </div>
-
-    <div class="col-9 pl-0"> 
+            <div class="col-9 pl-0"> 
                <div class="card-body">
                   <h6 class="card-title"><%= plant.name %></h6>
                   <%# <p class="card-text">Product description with <strong>relevant info</strong> only.</p> %>
                   <%= link_to square_path(id: params[:square_id], plant_id: plant.id), method: 'patch' do %>
                      <button class="btn btn-primary btn-sm"> <i class="fas fa-plus"></i> Add to my garden </button>
-                  <% end %>  
+                  <% end %>
+                  <% @plants.each do |plant_2| %>
+                     <% plant.associations[0..2].each do |association| %>
+                        <%= link_to square_path(id: params[:square_id], plant_id: plant_2.id), method: 'patch' do %>
+                           <% if plant_2.name == association %>
+                              <% if File.file? "#{Rails.root}/app/assets/images/#{plant_2.image}.jpg" %>
+                                 <%= image_tag("#{plant_2.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
+                              <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant_2.image}.png" %>
+                                 <%= image_tag("#{plant_2.image}.png", :class => "img-fluid rounded-start card-img" ) %>
+                              <% end %>
+                           <% end %>
+                        <% end %>
+                     <% end %>
+                  <% end %>
                </div>
             </div>
-         
          </div>
-
       </div> <!--class="card"-->
    <% end %>
 </div>
