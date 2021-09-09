@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_171855) do
+ActiveRecord::Schema.define(version: 2021_09_09_185640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2021_09_09_171855) do
     t.string "name"
     t.integer "temperature_max"
     t.integer "temperature_min"
-    t.json "associations", default: {}
     t.integer "harvest_day_after_planting"
     t.integer "length"
     t.integer "width"
@@ -47,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_09_09_171855) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.string "associations", default: [], array: true
   end
 
   create_table "squares", force: :cascade do |t|

@@ -39,7 +39,6 @@
                 </div> <!--class square-empty-->
               <% end %>
             <% elsif %>
-
               <div class="square-full"> 
                 <%= link_to square_path(square.id) do %>
                     <% if File.file? "#{Rails.root}/app/assets/images/#{square.plant.image}.jpg" %>
