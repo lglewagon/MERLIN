@@ -2,6 +2,7 @@ class Garden < ApplicationRecord
     has_many :squares
     geocoded_by :address
     after_validation :geocode
+    validates_presence_of :name
     
     require 'json'
     # filepath = '/Users/matthieudevillele/code/MatthdV/MERLIN/app/weather_test.json'
