@@ -36,8 +36,10 @@
   </div>
 
   <div class="d-flex flex-column mt-4">
-    <h4>Ma To Do List // Espace de prise de notes</h4>
-    <p> liste des tasks</p>
+    <%= simple_form_for (@square) do |f| %>
+      <%= f.input :notes, label: false, input_html: {placeholder:"Prenez des notes sur votre plantation"} %>
+      <%= f.submit "Valider", class: "btn btn-primary btn-block col-6" %>
+    <% end %>
   </div>
 
 
