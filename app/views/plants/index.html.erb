@@ -22,37 +22,48 @@
  <%# <p>Liste des plantes par ordre alphabétique</p> %>
    <% @plants.each do |plant|  %>
       <div class="card my-2">
-         <div class="row g-0 d-flex align-items-center"> 
+         <div class="row g-0 align-items-center border-bottom-1"> 
             <div class="col-3 pr-0"> 
                <% if File.file? "#{Rails.root}/app/assets/images/#{plant.image}.jpg" %>
                   <%= image_tag("#{plant.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
                   <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant.image}.png" %>
                   <%= image_tag("#{plant.image}.png", :class => "img-fluid rounded-start card-img" ) %>
                <% end %>
-            </div>
+            </div> <!-- class = col- 3 : plant.img -->
+
             <div class="col-9 pl-0"> 
                <div class="card-body">
-                  <h6 class="card-title"><%= plant.name %></h6>
-                  <%# <p class="card-text">Product description with <strong>relevant info</strong> only.</p> %>
+                  <h6 class="card-title"><%= plant.name %></h6>                 
                   <%= link_to square_path(id: params[:square_id], plant_id: plant.id), method: 'patch' do %>
                      <button class="btn btn-primary btn-sm"> <i class="fas fa-plus"></i> Add to my garden </button>
-                  <% end %>
-                  <% @plants.each do |plant_2| %>
-                     <% plant.associations[0..2].each do |association| %>
+                  <% end %> <!-- link_to -->
+               </div> <!-- class = card-body-->
+            </div> <!-- class = col- 9 : btn-->
+         </div> <!--class="row"-->
+
+         <div class="border-top border-3 bg-info"> 
+            <p class="ml-4"> Quelques associations conseillées : </p>
+         </div>
+
+         <div class="d-flex flex-row bg-info"> 
+            <% @plants.each do |plant_2| %>
+               <!-- TO DO : "association maline" si associations != empty --> 
+               <% plant.associations[0..2].each do |association| %>
+                     <% if plant_2.name == association%>
                         <%= link_to square_path(id: params[:square_id], plant_id: plant_2.id), method: 'patch' do %>
-                           <% if plant_2.name == association %>
+                           <div class="col-11"> 
                               <% if File.file? "#{Rails.root}/app/assets/images/#{plant_2.image}.jpg" %>
                                  <%= image_tag("#{plant_2.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
                               <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant_2.image}.png" %>
                                  <%= image_tag("#{plant_2.image}.png", :class => "img-fluid rounded-start card-img" ) %>
-                              <% end %>
-                           <% end %>
-                        <% end %>
-                     <% end %>
-                  <% end %>
-               </div>
-            </div>
+                              <% end %> <!-- IF : img -->
+                           </div>
+                        <% end %> <!-- link_to-->
+                     <% end %> <!-- IF -->
+               <% end %> <!-- plants.asociation -->
+            <% end %> <!-- plants.each -->
          </div>
+            
       </div> <!--class="card"-->
    <% end %>
 </div>
