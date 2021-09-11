@@ -1,8 +1,3 @@
-
-Bundler.require(*Rails.groups)
-Dotenv::Railtie.load
-HOSTNAME = ENV['HOSTNAME']
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
