@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'geocoder'
 
 gem 'autoprefixer-rails'
@@ -31,7 +33,7 @@ gem 'simple_form'
 gem 'excon'
 gem 'pry', '~> 0.13.1'
 gem 'rubocop', require: false
-gem 'dotenv-rails', groups: [:development, :test]
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

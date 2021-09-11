@@ -1,4 +1,4 @@
-class RequestWeather
+class RequestWeatherServices
 
     def initialize(latitude, longitude)
         @latitude = latitude
@@ -41,4 +41,3 @@ class RequestWeather
         p response.read_body
     end
 end
-
