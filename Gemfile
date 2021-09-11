@@ -5,8 +5,6 @@ ruby '2.6.6'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
-gem 'geocoder'
-
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 
