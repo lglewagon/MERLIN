@@ -47,13 +47,8 @@
             <p class="my-1 text-primary fw-bold"> Quelques associations conseillées : </p>
          </div>
 
-<<<<<<< HEAD
-         <div class="d-flex flex-row bg-info"> 
-            <% @all_plants.each do |plant_2| %>
-=======
          <div class="d-flex flex-row justify-content-center"> 
-            <% @plants.each do |plant_2| %>
->>>>>>> master
+            <% @all_plants.each do |plant_2| %>
                <!-- TO DO : "association maline" si associations != empty --> 
                <% plant.associations[0..2].each do |association| %>
                      <% if plant_2.name == association%>
