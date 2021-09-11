@@ -12,7 +12,8 @@
 <div class="container mt-4 pt-5">
     <form action= "<%= garden_plants_path %>" method = "get">
       <div class="search-form-control form-group">
-         <input class="form-control string required" type="text" name="query" id="query" />
+         <input type="hidden" name="square_id" id="square_id" value="<%= params[:square_id] %>" />
+         <input class="form-control string required" type="text" name="query" id="query" value="<%= params[:query] %>"/>
          <button type="submit" class="btn btn-flat">
             <i class="fas fa-search"></i> Search
          </button>
@@ -25,9 +26,9 @@
       <div class="card my-2">
          <div class="row g-0 align-items-center border-bottom-1"> 
             <div class="col-3 pr-0"> 
-               <% if File.file? "#{Rails.root}/app/assets/images/#{plant.image}.jpg" %>
+              <% if File.file? "#{Rails.root}/app/assets/images/#{plant.image}.jpg" %>
                   <%= image_tag("#{plant.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
-                  <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant.image}.png" %>
+              <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant.image}.png" %>
                   <%= image_tag("#{plant.image}.png", :class => "img-fluid rounded-start card-img" ) %>
                <% end %>
             </div> <!-- class = col- 3 : plant.img -->
@@ -46,8 +47,13 @@
             <p class="my-1 text-primary fw-bold"> Quelques associations conseillées : </p>
          </div>
 
+<<<<<<< HEAD
+         <div class="d-flex flex-row bg-info"> 
+            <% @all_plants.each do |plant_2| %>
+=======
          <div class="d-flex flex-row justify-content-center"> 
             <% @plants.each do |plant_2| %>
+>>>>>>> master
                <!-- TO DO : "association maline" si associations != empty --> 
                <% plant.associations[0..2].each do |association| %>
                      <% if plant_2.name == association%>
