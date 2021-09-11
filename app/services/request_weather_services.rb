@@ -7,7 +7,7 @@ class RequestWeatherServices
         # @end_time = end_time
         # @api_key = api_key
         # @date_encoding = date_encoding
-        
+
 
     end
 
@@ -28,7 +28,7 @@ class RequestWeatherServices
         apikey_str = "apikey=#{api_key}"
 
         url = base_url + location_str + fields_str + metric_str + timesteps + start_time_str + end_time_str + apikey_str
-        
+
         uri = URI(url)
 
         http = Net::HTTP.new(uri.host, uri.port)
