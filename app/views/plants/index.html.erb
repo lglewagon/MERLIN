@@ -20,6 +20,7 @@
     </form>
 
  <%# <p>Liste des plantes par ordre alphabétique</p> %>
+
    <% @plants.each do |plant|  %>
       <div class="card my-2">
          <div class="row g-0 align-items-center border-bottom-1"> 
@@ -41,23 +42,24 @@
             </div> <!-- class = col- 9 : btn-->
          </div> <!--class="row"-->
 
-         <div class="border-top border-3 bg-info"> 
-            <p class="ml-4"> Quelques associations conseillées : </p>
+         <div class="border-top border-4 d-flex align-items-center justify-content-center"> 
+            <p class="my-1 text-primary fw-bold"> Quelques associations conseillées : </p>
          </div>
 
-         <div class="d-flex flex-row bg-info"> 
+         <div class="d-flex flex-row justify-content-center"> 
             <% @plants.each do |plant_2| %>
                <!-- TO DO : "association maline" si associations != empty --> 
                <% plant.associations[0..2].each do |association| %>
                      <% if plant_2.name == association%>
-                        <%= link_to square_path(id: params[:square_id], plant_id: plant_2.id), method: 'patch' do %>
-                           <div class="col-11"> 
+                        <%= link_to(square_path(id: params[:square_id], plant_id: plant_2.id), method: 'patch', class:"d-flex flex-column justify-content-end align-items-center" ) do %>
+                           <div class="col-7 d-flex flex-column px-0"> 
                               <% if File.file? "#{Rails.root}/app/assets/images/#{plant_2.image}.jpg" %>
                                  <%= image_tag("#{plant_2.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
                               <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant_2.image}.png" %>
                                  <%= image_tag("#{plant_2.image}.png", :class => "img-fluid rounded-start card-img" ) %>
                               <% end %> <!-- IF : img -->
                            </div>
+                              <p class="badge bg-success rounded-pill text-primary px-3 "> <%= plant_2.name %> </p>
                         <% end %> <!-- link_to-->
                      <% end %> <!-- IF -->
                <% end %> <!-- plants.asociation -->
