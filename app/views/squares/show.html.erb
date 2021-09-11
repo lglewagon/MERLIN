@@ -43,7 +43,7 @@
   </div>
 
 
-  <%= link_to garden_path(square_id: @square.id) do %>
+  <%= link_to garden_path(@square.garden.id) do %>
     <div class="d-flex justify-content-center fixed-bottom mb-2 bg-white">
       <button class="btn btn-primary px-3"> <i class="fas fa-home mr-2"></i>Retour à mon jardin</button><br/>
     </div>
