@@ -17,6 +17,8 @@
 </div>
 
 <div class="container mt-4 pt-5">
+  <p></i> Planté le : <span><%=@square.planting_date %></span> <!--TO DO : formater la date dd.mm.yy--></p>
+  <p></i> Récolte approximative : <span> ***TO DO**</span> <!--TO DO : formater la date dd.mm.yy--></p>
   <div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
     <span class="progress-left">
       <span class="progress-bar border-primary"></span>
@@ -27,8 +29,7 @@
     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
     <%  %> <!--Icon graine/plante/fruit-->
       <div class="text-center">
-        <p></i> Planté le : </p>
-        <p><%=@square.planting_date %></p> <!--TO DO : formater la date dd.mm.yy-->
+      
         <!--TO DO : Récole approximative--> 
       </div>
     </div>
