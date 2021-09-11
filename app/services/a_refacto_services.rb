@@ -1,4 +1,4 @@
-class RequestWeatherService
+class RequestWeatherServiceRefacto
     BASE_URL      = 'https://api.tomorrow.io/v4/timelines?'
     FIELDS        = "fields=humidity&fields=precipitationProbability&fields=precipitationType&fields=temperature&fields=windSpeed&fields=windDirection&"
     METRICS       =  'units=metric&'
@@ -11,7 +11,7 @@ class RequestWeatherService
         longitude,
         start_time:   Time.now,
         end_time:     DateTime.now + 1.day,
-        net_http:     Net::HTTP::Get 
+        net_http:     Net::HTTP::Get
         
     )
       @latitude     = latitude
