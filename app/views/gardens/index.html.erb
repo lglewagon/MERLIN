@@ -26,23 +26,23 @@
             <p> <i class="fas fa-cloud-rain"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationProbability"]%> %</p>
             <% weather_rain_type = garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]%>
             <% if weather_rain_type == 0 %>
-              <%= "The precipitation type is: N/A " %>
+              <%= "The precipitation type is: N/A " %><i class="fas fa-sun"></i>
             <% end %>
 
             <% if weather_rain_type == 1 %>
-              <%= "The precipitation type is: Rain"%>
+              <%= "The precipitation type is: Rain"%><i class="fas fa-cloud-rain"></i>
             <% end %>
 
             <% if weather_rain_type == 2 %>
-            <%= "The precipitation type is: Snow"%>
+            <%= "The precipitation type is: Snow"%><i class="far fa-snowflake"></i>
             <% end %>
 
             <% if weather_rain_type == 3%>
-            <%= "The precipitation type is: Freezing Rain"%>
+            <%= "The precipitation type is: Freezing Rain"%><i class="far fa-cloud-sleet"></i>
             <% end %>
 
             <% if weather_rain_type == 4%>
-              <%= "The precipitation type is: Ice Pellets"%>
+              <%= "The precipitation type is: Ice Pellets"%><i class="fad fa-cloud-hail"></i>
             <% end %>
           </li>
           <li class="list-group-item" > 
