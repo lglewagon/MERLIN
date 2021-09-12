@@ -18,7 +18,7 @@
     <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @garden.width_in_cm/100.to_f%> m X <%= @garden.length_in_cm/100.to_f%> m</span>
   </div>
 
-  <p class="text-muted fs-4 font-size-sm"><i class="fas fa-info"></i> Chaque carré représente une superficie 0.5m<sup>2.</sup> </p>  
+  <p class="text-muted fs-4 font-size-sm"> <small> <i class="fas fa-info"></i> Chaque carré représente une superficie 0.5m<sup>2.</sup> </small></p>  
 
   <div class="overflow-auto garden"> 
     <div class="d-flex flex-column"> 
@@ -70,7 +70,7 @@
 
   <%# Aller sur TOUS les gardens %>
   <%= link_to(gardens_path) do %>
-    <div class="d-flex justify-content-center mt-4">     
+    <div class="d-flex justify-content-center mt-2">     
       <button class="btn btn-primary"><i class="fas fa-check"></i> Valider </button>
     </div>
   <% end %>

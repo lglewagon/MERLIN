@@ -11,7 +11,7 @@ Square.destroy_all
 Garden.destroy_all
 Plant.destroy_all
 
-#@squares = Square.create!([{length_fix: 1}, {width_fix: 2}, {position_x: 3}, {position_y:4}, {active: true}])
+## Création de toutes les plantes
 Plant.create!(name: "Abricot", temperature_max: 32, temperature_min: 0, associations: ["Basilic", "Carottes", "Fraises"], harvest_day_after_planting: 25, length: 5, width: 5, sunshine: 2, image: 'Abricot')
 Plant.create!(name: "Ail", temperature_max: 32, temperature_min: 0, associations: ["Carottes", "Fraises", "Laitue", "Oignon", "Patate", "Tomate"], harvest_day_after_planting: 35, length: 5, width: 5, sunshine: 2, image: 'Ail')
 Plant.create!(name: "Artichaut", temperature_max: 32, temperature_min: 0, associations: ["Laitue", "Pois", "Oignon"], harvest_day_after_planting: 60, length: 5, width: 5, sunshine: 2, image: 'Artichaut')
@@ -36,5 +36,15 @@ Plant.create!(name: "Pomme", temperature_max: 32, temperature_min: 0, associatio
 Plant.create!(name: "Romarin", temperature_max: 32, temperature_min: 0, associations: ["Chou", "Carottes", "Navet", "Tomate"], harvest_day_after_planting: 24, length: 5, width: 5, sunshine: 2, image: 'Romarin')
 Plant.create!(name: "Tomate", temperature_max: 32, temperature_min: 0, associations: ["Ail", "Carottes", "Chou", "Oignon", "Patate"], harvest_day_after_planting: 900, length: 5, width: 5, sunshine: 2, image: 'Tomate')
 
-
 puts "#{Plant.count} plants created"
+
+## Création d'un jardin
+Garden.create!(length: 4, width: 4, shoe_size: 42 ,name: "Mont jar d'1", length_in_cm: 100,width_in_cm: 100, length_in_squares: 2,width_in_squares: 2)
+
+puts "#{Garden.count} Garden created"
+
+## Création de Squares dans le jardin créé
+Square.create!(planting_date: "24/08/2021", garden_id: 1, plant_id: 1)
+Square.create!(planting_date: "24/07/2021", garden_id: 1, plant_id: 2)
+
+puts "#{Square.count} Squares created"

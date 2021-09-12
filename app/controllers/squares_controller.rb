@@ -15,6 +15,7 @@ class SquaresController < ApplicationController
       @square = Square.find(params[:id])
       @plant = @square.plant
       @square.planting_date = Date.current
+      @all_plants = Plant.all
       
       @date_de_recolte = @square.planting_date + @plant.harvest_day_after_planting
       @progression = (Date.current - @square.planting_date) / (@date_de_recolte - @square.planting_date).to_f * 100
