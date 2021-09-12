@@ -6,11 +6,11 @@ class Square < ApplicationRecord
   HEIGHT = 50
 
   def next
-    Square.where(garden: garden).where("id > ?", id).first || Square.where(garden: garden).first
+    Square.where(garden: garden).where("id > ?", id).where.not(plant_id: nil).first || Square.where(garden: garden).where.not(plant_id: nil).first
   end
   
   def previous
-    Square.where(garden: garden).where("id < ?", id).last || Square.where(garden: garden).last
+    Square.where(garden: garden).where("id < ?", id).where.not(plant_id: nil).last || Square.where(garden: garden).where.not(plant_id: nil).last
   end
 
 end
