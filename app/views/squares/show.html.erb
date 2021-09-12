@@ -1,24 +1,25 @@
-<div class="container-fluid header header-new"> <!--TO DO fixer les fleches -->
+<div class="container-fluid header header-square-new"> <!--TO DO fixer les fleches -->
     <div class="container d-flex flex-column align-items-center"> 
         <div class="row justify-content-center">
-            <h5><%= link_to ' ', square_path(@square.previous), class: "fas fa-angle-left text-white" %></h5>
-            <div class="pl-5 pr-5"><h5><%= @plant.name %></h5></div>
-            <h5><%= link_to ' ', square_path(@square.next), class: "fas fa-angle-right text-white" %></h5>
-        </div>
+            <%= link_to square_path(@square.previous) do%>
+              <h5> <i class="fas fa-angle-left"></i></h5>
+            <% end %>
 
-        <div class="header-icon"> 
-          <% if File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.jpg" %>
-            <%= image_tag "#{@plant.image}.jpg", class: "header-icon-image" %>
-          <% elsif File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.png" %>
-            <%= image_tag "#{@plant.image}.png", class: "header-icon-image" %>
-          <% end %>
+            <div class="pl-5 pr-5"><h5><%= @plant.name %></h5></div>
+
+            <%= link_to square_path(@square.previous) do%>
+              <h5> <i class="fas fa-angle-right"></i></h5>
+            <% end %>
         </div>
     </div>  
 </div>
 
-<div class="container mt-4 pt-5">
-  <p></i> Planté le : <span><%=@square.planting_date %></span> <!--TO DO : formater la date dd.mm.yy--></p>
-  <p></i> Récolte approximative : <span> ***TO DO**</span> <!--TO DO : formater la date dd.mm.yy--></p>
+<div class="container mt-4 pt-3">
+  
+  <div class="d-flex flex-row flex-wrap justify-content-center mb-3">
+   <h6 class = "mr-3"> t° min : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_min %>°C </span> </h6>
+   <h6> t° max : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_max %>°C </span></h6>
+  </div>
   <div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
     <span class="progress-left">
       <span class="progress-bar border-primary"></span>
@@ -27,28 +28,44 @@
       <span class="progress-bar border-primary"></span>
     </span>
     <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-    <%  %> <!--Icon graine/plante/fruit-->
-      <div class="text-center">
-      
-        <!--TO DO : Récole approximative--> 
+      <div class="">
+        <% if File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.jpg" %>
+          <%= image_tag "#{@plant.image}.jpg", class: "progress-img" %>
+        <% elsif File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.png" %>
+          <%= image_tag "#{@plant.image}.png", class: "progress-img" %>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <div class="d-flex mt-4 justify-content-center form-group">
-    <%= simple_form_for (@square) do |f| %>
-      <%= f.input :notes, label: false, input_html: {placeholder:"Prenez des notes sur votre plantation", class: "form-control"} %>  
-      <div class="d-flex flex-row justify-content-around mx-0"> 
-        <%= f.submit "Valider", class: "btn btn-primary" %>
-        <%= link_to(gardens_path) do %> <!--TO DO -->
-          <button class="btn btn-outline-primary"><i class="fas fa-pencil-alt"></i> Éditer </button>
-        <% end %>
-      </div>     
+  <div class="my-3"> 
+    <p class="mb-1"> Plantée le : <span><%=@square.planting_date %></span> <!--TO DO : formater la date dd.mm.yy--></p>
+    <p> Récolte approximative : <%=@square.harvest_date %><!--TO DO : formater la date dd.mm.yy--></p>  
+    <%= link_to(gardens_path) do %> <!-- ***TO DO*** -->
+        <button class="btn btn-outline-primary"><i class="far fa-trash-alt mr-2"></i>Supprimer cette plante </button>
     <% end %>
   </div>
 
+  <div class="border-top border-3 pt-3">
+    <h6 class="text-center"> Association conseillées à proximité <br>de cette plante : </h6>
+    <div class="d-flex flex-row flex-wrap px-0 justify-content-center"> 
+      <% @plant.associations.each do |association| %>
+          <div class="col-3 d-flex flex-column align-items-center px-0"> 
+            <% if File.file? "#{Rails.root}/app/assets/images/#{association}.jpg" %>
+                <%= image_tag("#{association}.jpg", :class => "img-fluid rounded-start card-img" ) %>
+            <% elsif File.file? "#{Rails.root}/app/assets/images/#{association}.png" %>
+                <%= image_tag("#{association}.png", :class => "img-fluid rounded-start card-img" ) %>
+            <% end %> <!-- IF : img -->        
+            <div> 
+              <p class="badge bg-success rounded-pill text-primary px-3 "> <%= association %> </p>
+            </div>
+          </div>
+      <% end %>
+    </div> <!-- d-flex flex-row --> 
+  </div>
+
   <%= link_to garden_path(@square.garden.id) do %>
-    <div class="d-flex justify-content-center fixed-bottom mb-2 bg-white">
+    <div class="d-flex justify-content-center my-2">
       <button class="btn btn-primary px-3"> <i class="fas fa-home mr-2"></i>Retour à mon jardin</button><br/>
     </div>
   <% end %>
