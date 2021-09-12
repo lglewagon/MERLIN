@@ -9,6 +9,11 @@
 </div>
 
 <div class="container mt-4 pt-3">
+  
+  <div class="d-flex flex-row flex-wrap justify-content-center mb-3">
+   <h6 class = "mr-3"> t° min : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_min %>°C </span> </h6>
+   <h6> t° max : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_max %>°C </span></h6>
+  </div>
   <div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
     <span class="progress-left">
       <span class="progress-bar border-primary"></span>
@@ -39,7 +44,7 @@
     <h6 class="text-center"> Association conseillées à proximité <br>de cette plante : </h6>
     <div class="d-flex flex-row flex-wrap px-0 justify-content-center"> 
       <% @plant.associations.each do |association| %>
-          <div class="col-3 d-flex flex-column px-0"> 
+          <div class="col-3 d-flex flex-column align-items-center px-0"> 
             <% if File.file? "#{Rails.root}/app/assets/images/#{association}.jpg" %>
                 <%= image_tag("#{association}.jpg", :class => "img-fluid rounded-start card-img" ) %>
             <% elsif File.file? "#{Rails.root}/app/assets/images/#{association}.png" %>
