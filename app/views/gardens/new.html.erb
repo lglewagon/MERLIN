@@ -32,7 +32,7 @@
             <strong> <label for="formControlRange">Longueur<sup class=" ml-1 text-primary">*</sup> </label> </strong>
             <div class="d-flex"> 
                 <div class="mr-3"> 1 </div>
-                <div class="mr-1 flex-fill"> <%= f.input :length, label: false, input_html: { min:1, max:50, class:"custom-range border-0 range-field", type:"range", step:1 }%></div>
+                <div class="mr-1 flex-fill"> <%= f.input :length, label: false, input_html: { min:1, max:30, class:"custom-range border-0 range-field", type:"range", step: 1}%></div>
                 <div class="ml-3"> <span id="lengthValue" class="font-weight-bold text-primary"> </span> <i class="fas fa-shoe-prints text-primary"></i></div>
             </div>
         </div>
@@ -41,7 +41,7 @@
             <strong> <label for="widthInFeet" class="form-label">Largeur<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex "> 
                 <div class="mr-3"> 1 </div>
-                <div class="mr-1 flex-fill"> <%= f.input :width, label: false, input_html: { min:1, max:50, class:"custom-range border-0 range-field", type:"range", step:1} %></div>
+                <div class="mr-1 flex-fill"> <%= f.input :width, label: false, input_html: { min:1, max:30, class:"custom-range border-0 range-field", type:"range", step: 1} %></div>
                 <div class="ml-3"> <span id="widthValue" class="font-weight-bold text-primary"> </span> <i class="fas fa-shoe-prints text-primary"></i></div>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <strong> <label for="formControlRange">Quelle est votre pointure ?<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex"> 
                 <div class="mr-3"> 33</div>
-                <div class="mr-1 flex-fill"> <%= f.input :shoe_size, label: false, input_html: { min:33, max:48, class:"custom-range border-0 range-field", type:"range", step:1 }%></div>
+                <div class="mr-1 flex-fill"> <%= f.input :shoe_size, label: false, input_html: { min:33, max:48, class:"custom-range border-0 range-field", type:"range", step: 1}%></div>
                 <div class="ml-3"> <span id="shoeSizeValue" class="font-weight-bold text-primary"> </span> <i class="fas fa-shoe-prints text-primary"></i> </div>
             </div>
         </div>
