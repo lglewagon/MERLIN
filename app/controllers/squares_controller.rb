@@ -22,10 +22,10 @@ class SquaresController < ApplicationController
     end
     
 
-    # def update 
-    #   @square = Square.find(params[:id])
+    # def update
+    #   @square = Square.find(:id)
     #   @square.update(square_params)
-    # end 
+    # end
 
     private
 
