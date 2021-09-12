@@ -49,7 +49,7 @@
         <%= f.hidden_field :latitude, label: "latitude" %>
         <%= f.hidden_field :longitude, label: "longitude" %>
 
-        <div class="form-group">
+        <div class="form-group mb-5">
             <strong> <label for="formControlRange">Quelle est votre pointure ?<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex"> 
                 <div class="mr-3"> 33</div>
@@ -58,7 +58,7 @@
             </div>
         </div>
         
-        <div class="d-flex justify-content-center form-group fixed-bottom mb-2 bg-white"> 
+        <div class="d-flex justify-content-center form-group mb-2"> 
             <%= f.submit "Valider", class: "btn btn-primary btn-block col-6" %>
         </div>
     <% end %>
