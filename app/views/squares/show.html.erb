@@ -40,7 +40,7 @@
 
   <div class="my-3"> 
     <p class="mb-1"> Plantée le : <span><%= @square.planting_date.to_formatted_s(:rfc822) %></span></p>
-    <p> Récolte approximative : <%= @square.harvest_date %><!--TO DO : formater la date dd.mm.yy--></p>  
+    <p> Récolte approximative : <%= @date_de_recolte.strftime("%b %Y") %><!--TO DO : formater la date dd.mm.yy--></p>  
     <%= link_to(gardens_path) do %> <!-- ***TO DO*** -->
         <button class="btn btn-outline-primary"><i class="far fa-trash-alt mr-2"></i>Supprimer cette plante </button>
     <% end %>
