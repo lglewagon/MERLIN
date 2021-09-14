@@ -7,7 +7,9 @@
     background-blend-mode: multiply, normal;
     background-size: cover;
 
-    background-color: rgba(107, 191, 145, 0.19);
+    border-radius: 0px 0px 60px 0px;
+    background-color: $green-100;
+    z-index: -2;
 }
 
 
@@ -41,13 +43,13 @@
 
 .header-blob {
     z-index: -1;
-    height: 300px;
+    height: 200px;
     width: auto;
     position: absolute;
     opacity: .6;
 
-    top: - 90px;
-    left: -100px;
+    top: - 50px;
+    left: -80px;
 
 }
 
