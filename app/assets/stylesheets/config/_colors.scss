@@ -2,7 +2,7 @@
 
 // Valeurs de gris
 
-$white:    #F1F0EE !default;
+$white:    #f8f7f4 !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -28,14 +28,14 @@ $grays: (
 
 // Couleurs Merlin ✨
 
-$blue:    #a6d8cb9d !default;
-$brand-green:  #3A5A40 !default;
+$blue:    #C3D6DA !default;
+$brand-green:  #6BBF91 !default;
 $purple:  #5E2BFF !default;
 $pink:    #FF5E5B !default;
 $red:     #C4876F !default;
-$orange:  #CC3F0C !default;
-$yellow:  #EDC79B !default;
-$green:   #C5D3B4 !default;
+$orange:  #FF834D !default;
+$yellow:  #FFBF37 !default;
+$green:   #B5E1C9 !default;
 $teal:    #E1E9DC !default;
 $cyan:    #7EB2DD !default;
 
@@ -58,7 +58,7 @@ $colors: (
 // Bootstrap variables Theme
 
 $primary:       $brand-green !default;
-$secondary:     $cyan !default;
+$secondary:     $orange !default;
 $success:       $green !default;
 $info:          $blue !default;
 $warning:       $yellow !default;

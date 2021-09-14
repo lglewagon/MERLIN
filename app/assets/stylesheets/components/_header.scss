@@ -1,11 +1,13 @@
 .header {
     position: relative;
     justify-content: center;
-    padding-top: 2em;
-    height: 8em;
+    padding-top: 4em;
+    height: 9em;
     background-position: bottom;
     background-blend-mode: multiply, normal;
     background-size: cover;
+
+    background-color: rgba(255, 131, 77, 0.5);
 }
 
 .header h5 {
@@ -17,16 +19,16 @@
 .header .header-icon{
     position: relative;
     // top: 90px;   
-    background-color: #F1F0EE;
-    height: 80px;
-    width: 80px;
+    // background-color: #F1F0EE;
+    height: 8em;
+    width: auto;
     padding: 5px;
     border-radius: 50%;
-    border: white 2px solid;
+    // border: white 2px solid;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 1px 4px rgba(85, 65, 58, 0.25), -2px -2px 4px rgba(184, 169, 169, 0.5), inset 2px 2px 5px rgba(198, 197, 195, 0.9);
+    // box-shadow: 0px 1px 4px rgba(85, 65, 58, 0.25), -2px -2px 4px rgba(184, 169, 169, 0.5), inset 2px 2px 5px rgba(198, 197, 195, 0.9);
 }
 .header .header-icon .header-icon-image {
     box-sizing: border-box;
@@ -35,10 +37,28 @@
     mix-blend-mode: multiply;
 }
 
-.header-new {
-    background-image: linear-gradient(180deg, rgba(39, 24, 18, 0.4) 0%, rgba(39, 24, 18, 0.1) 170.47%),
-    url('https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80') ;
+.header .outer {
+    overflow: hidden;
+    position: relative;
 }
+
+
+.header-blob {
+    z-index: -1;
+    height: 300px;
+    width: auto;
+    position: absolute;
+    opacity: .6;
+
+    top: - 90px;
+    left: -100px;
+
+}
+
+// .header-new {
+//     background-image: linear-gradient(180deg, rgba(39, 24, 18, 0.4) 0%, rgba(39, 24, 18, 0.1) 170.47%),
+//     url('https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80') ;
+// }
 
 .header-show {
     background-image: linear-gradient(180deg, rgba(39, 24, 18, 0.4) 0%, rgba(39, 24, 18, 0.1) 170.47%),
