@@ -14,7 +14,7 @@ class SquaresController < ApplicationController
     def show
       @square = Square.find(params[:id])
       @plant = @square.plant
-      @square.planting_date = Date.current
+      # @square.planting_date
       @all_plants = Plant.all
       
       @date_de_recolte = @square.planting_date + @plant.harvest_day_after_planting
@@ -31,7 +31,7 @@ class SquaresController < ApplicationController
     private
 
   def square_params
-    params.permit(:plant_id)
+    params.permit(:plant_id, :planting_date)
   end
 
 end
