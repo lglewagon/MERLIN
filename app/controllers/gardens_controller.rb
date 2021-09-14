@@ -1,6 +1,9 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :destroy]
 
+  def landing
+    
+  end
 
   def new
     @garden = Garden.new
