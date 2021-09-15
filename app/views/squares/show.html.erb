@@ -1,6 +1,7 @@
-<div class="container-fluid header header-square-new"> <!--TO DO fixer les fleches -->
-    <div class="container d-flex flex-column align-items-center"> 
-        <div class="row justify-content-center">
+<div class="container-fluid header header-square-show"> <!--TO DO fixer les fleches -->
+    <div class="container d-flex flex-column align-items-center "> 
+    
+        <div class="row justify-content-center mb-3">
             <%= link_to square_path(@square.previous) do%>
               <h5> <i class="fas fa-angle-left"></i></h5>
             <% end %>
@@ -11,6 +12,26 @@
               <h5> <i class="fas fa-angle-right"></i></h5>
             <% end %>
         </div>
+
+      <div class="progress mx-auto mt-3" data-value="<%=@progression.round(0)%>">
+        <span class="progress-left">
+          <span class="progress-bar border-primary"></span>
+        </span>
+        <span class="progress-right">
+          <span class="progress-bar border-primary"></span>
+        </span>
+        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+          <div class="">
+            <% if File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.jpg" %>
+              <%= image_tag "#{@plant.image}.jpg", class: "progress-img" %>
+            <% elsif File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.png" %>
+              <%= image_tag "#{@plant.image}.png", class: "progress-img" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+
     </div>  
 </div>
 
@@ -20,23 +41,7 @@
    <h6 class = "mr-3"> t° min : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_min %>°C </span> </h6>
    <h6> t° max : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_max %>°C </span></h6>
   </div>
-  <div class="progress mx-auto" data-value="<%=@progression.round(0)%>">
-    <span class="progress-left">
-      <span class="progress-bar border-primary"></span>
-    </span>
-    <span class="progress-right">
-      <span class="progress-bar border-primary"></span>
-    </span>
-    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-      <div class="">
-        <% if File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.jpg" %>
-          <%= image_tag "#{@plant.image}.jpg", class: "progress-img" %>
-        <% elsif File.file? "#{Rails.root}/app/assets/images/#{@plant.image}.png" %>
-          <%= image_tag "#{@plant.image}.png", class: "progress-img" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  
 
   <div class="my-3"> 
     <p class="mb-1"> Plantée le : <span><%= @square.planting_date.to_formatted_s(:rfc822) %></span></p>
@@ -50,14 +55,14 @@
     <h6 class="text-center"> Association conseillées à proximité <br>de cette plante : </h6>
     <div class="d-flex flex-row flex-wrap px-0 justify-content-center"> 
       <% @plant.associations.each do |association| %>
-          <div class="col-3 d-flex flex-column align-items-center px-0"> 
+          <div class="col-3 mx-2 d-flex flex-column align-items-center px-0"> 
             <% if File.file? "#{Rails.root}/app/assets/images/#{association}.jpg" %>
                 <%= image_tag("#{association}.jpg", :class => "img-fluid rounded-start card-img" ) %>
             <% elsif File.file? "#{Rails.root}/app/assets/images/#{association}.png" %>
                 <%= image_tag("#{association}.png", :class => "img-fluid rounded-start card-img" ) %>
             <% end %> <!-- IF : img -->        
             <div> 
-              <p class="badge bg-success rounded-pill text-primary px-3 "> <%= association %> </p>
+              <p class="badge bg-secondary rounded-pill text-white px-3 "> <%= association %> </p>
             </div>
           </div>
       <% end %>

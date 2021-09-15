@@ -34,10 +34,10 @@ $pink:    #FF5E5B !default;
 $red:     #C4876F !default;
 $orange:  #FF834D !default;
 $yellow:  #FFBF37 !default;
-$green:   #6BBF91 !default;
+$green:   #2B8C69 !default;
 $teal:    #E1E9DC !default;
-$cyan:    #5c7edd !default;
-$green-darker:   #528C48 !default;
+$cyan:    #4f6fc5 !default;
+$green-darker:   #315642 !default;
 
 
 $colors: (
@@ -73,8 +73,8 @@ $primary:       $green !default;
 $secondary:     $cyan !default;
 $success:       $green !default;
 $info:          $blue !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
+$warning:       $green-100 !default;
+$danger:        $orange !default;
 $light:         $gray-100 !default;
 $dark:          $green-darker !default;
 

@@ -2,17 +2,24 @@
     position: relative;
     justify-content: center;
     padding-top: 4em;
-    height: 9.5em;
+    height: 200px;
     background-position: bottom;
     background-blend-mode: multiply, normal;
     background-size: cover;
 
-    border-radius: 0px 0px 40px 0px;
+    // border-radius: 0px 0px 40px 0px;
     background-color: $green-100;
     z-index: -2;
 }
 
+.header-square-show{
+    background: #FAFCFF;
+    box-shadow: 0px 40px 0px #FF834D;
+    border-radius: 0px 0px 50px 0px;
 
+    height: 60vh;
+    width: 100%;
+}
 
 .header .header-icon{
     position: relative;

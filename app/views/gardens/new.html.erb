@@ -5,8 +5,8 @@
             <%= image_tag ('illus-tool-4.svg'), class:"header-icon-image" %>
         </div> 
 
-        <div class="mr-4">
-        <h5>VOTRE ESPACE</h5>
+        <div class="ml-1 mr-4">
+        <h4 class="">Votre espace</h4>
         </div>
 
     </div> 
@@ -14,17 +14,17 @@
 
 
 
-<div class="container mt-3 px-4 pt-3">
+<div class="container-background px-4 pt-5">
     
     <div class ="d-flex flex-column mb-2 align-items-center"> 
-        <button id="find-me" class="btn btn-outline-primary col-9 text-dark"> <i class="fas fa-map-marker-alt mr-2"></i>Partager ma localisation</button>
+        <button id="find-me" class="btn btn-outline-primary col-9 text-dark btn-sm"> <i class="fas fa-map-marker-alt mr-2"></i>Partager ma localisation</button>
         <p id="status" ></p>
         <a id="map-link" target="_blank"></a>    
     </div>
 
 
     <%= simple_form_for (@garden) do |f| %>
-        <h6>Calculez la superficie de votre potager</h6>
+        
         <div class="form-group mb-1">
             <strong class=""> <label for="">Le nom de votre jardin<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex"> 
@@ -40,7 +40,7 @@
             <div class="d-flex"> 
                 <div class="mr-3"> 1 </div>
                 <div class="mr-1 flex-fill"> <%= f.input :length, label: false, input_html: { min:1, max:30, class:"custom-range border-0 range-field", type:"range", step: 1}%></div>
-                <div class="ml-3"> <span id="lengthValue" class="font-weight-bold text-secondary"> </span> <i class="fas fa-shoe-prints text-primary"></i></div>
+                <div class="ml-3"> <span id="lengthValue" class="font-weight-bold text-primary"> </span> <i class="fas fa-shoe-prints text-primary"></i></div>
             </div>
         </div>
 
@@ -49,7 +49,7 @@
             <div class="d-flex "> 
                 <div class="mr-3"> 1 </div>
                 <div class="mr-1 flex-fill"> <%= f.input :width, label: false, input_html: { min:1, max:30, class:"custom-range border-0 range-field", type:"range", step: 1} %></div>
-                <div class="ml-3"> <span id="widthValue" class="font-weight-bold text-secondary"> </span> <i class="fas fa-shoe-prints text-primary"></i></div>
+                <div class="ml-3"> <span id="widthValue" class="font-weight-bold text-primary"> </span> <i class="fas fa-shoe-prints text-primary"></i></div>
             </div>
         </div>
 
@@ -61,12 +61,12 @@
             <div class="d-flex"> 
                 <div class="mr-3"> 33</div>
                 <div class="mr-1 flex-fill"> <%= f.input :shoe_size, label: false, input_html: { min:33, max:48, class:"custom-range border-0 range-field", type:"range", step: 1}%></div>
-                <div class="ml-3"> <span id="shoeSizeValue" class="font-weight-bold text-secondary"> </span> <i class="fas fa-shoe-prints text-primary"></i> </div>
+                <div class="ml-3"> <span id="shoeSizeValue" class="font-weight-bold text-primary"> </span> <i class="fas fa-shoe-prints text-primary"></i> </div>
             </div>
         </div>
         
         <div class="d-flex justify-content-center form-group mb-3"> 
-            <%= f.submit "Valider", class: "btn btn-primary btn-block col-6 font-weight-bold " %>
+            <%= f.submit "Valider", class: "btn btn-danger btn-block col-6 font-weight-bold " %>
         </div>
     <% end %>
 
