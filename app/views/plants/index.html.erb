@@ -52,7 +52,7 @@
                <!-- TO DO : "association maline" si associations != empty --> 
                <% plant.associations[0..2].each do |association| %>
                      <% if plant_2.name == association%>
-                        <%= link_to(square_path(id: params[:square_id], plant_id: plant_2.id), method: 'patch', class:"d-flex flex-column justify-content-end align-items-center" ) do %>
+                        <%= link_to(square_path(id: params[:square_id], plant_id: plant_2.id, planting_date: Date.current), method: 'patch', class:"d-flex flex-column justify-content-end align-items-center" ) do %>
                            <div class="col-7 d-flex flex-column px-0"> 
                               <% if File.file? "#{Rails.root}/app/assets/images/#{plant_2.image}.jpg" %>
                                  <%= image_tag("#{plant_2.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
