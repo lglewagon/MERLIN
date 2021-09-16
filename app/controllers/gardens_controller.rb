@@ -21,10 +21,9 @@ class GardensController < ApplicationController
 
     @garden.width_in_cm = n_squares[2] 
     @garden.length_in_cm = n_squares[3]
-    
-    
+
     total_squares = n_squares[0]*n_squares[1]
-  
+
 
     total_squares.times do 
       @garden.squares << Square.new(garden_id: @garden.id)
@@ -40,8 +39,11 @@ class GardensController < ApplicationController
   def index
     @gardens = Garden.all
     @weather = @gardens.first.weather
-    @weather_rain_type = @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]
-
+    @weather_rain_type = []
+    @gardens.each do |garden|
+      @weather = garden.weather
+      @weather_rain_type = @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]
+    end
   end
 
   def find_garden(id)
