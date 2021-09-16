@@ -1,15 +1,18 @@
-<div class="container-fluid header header-square">
-   <div class="container d-flex flex-column align-items-center">
-      <div class="row px-5">
-         <h5>Choisis une plante</h5>
-      </div>
-      <div class="header-icon"> 
+<div class="container-fluid header header-index px-0 pt-3">
+   <div class="d-flex flex-row align-items-center">
+
+      <div class="header-icon col-4 ml-3 px-0"> 
          <%= image_tag ('illus-tool-2.svg'), class:"header-icon-image" %>
+      </div>
+
+      <div class="mr-4">
+         <h5>Choisissez une plante</h5>
       </div>
    </div>
 </div>
 
-<div class="container mt-4 pt-5">
+
+<div class="container container-background px-4 pt-5">
     <form action= "<%= garden_plants_path %>" method = "get">
       <div class="search-form-control form-group">
          <input type="hidden" name="square_id" id="square_id" value="<%= params[:square_id] %>" />
@@ -25,7 +28,7 @@
    <% @plants.each do |plant|  %>
       <div class="card my-2">
          <div class="row g-0 align-items-center border-bottom-1"> 
-            <div class="col-3 pr-0"> 
+            <div class="col-4 pr-0"> 
               <% if File.file? "#{Rails.root}/app/assets/images/#{plant.image}.jpg" %>
                   <%= image_tag("#{plant.image}.jpg", :class => "img-fluid rounded-start card-img" ) %>
               <% elsif File.file? "#{Rails.root}/app/assets/images/#{plant.image}.png" %>
@@ -33,11 +36,11 @@
                <% end %>
             </div> <!-- class = col- 3 : plant.img -->
 
-            <div class="col-9 pl-0"> 
+            <div class="col-8 pl-0"> 
                <div class="card-body">
                   <h6 class="card-title"><%= plant.name %></h6>                 
                   <%= link_to square_path(id: params[:square_id], plant_id: plant.id, planting_date: Date.current), method: 'patch' do %>
-                     <button class="btn btn-primary btn-sm"> <i class="fas fa-plus"></i> Ajouter à mon potager </button>
+                     <button class="btn btn-danger btn-sm"> <i class="fas fa-plus"></i> Ajouter à mon potager </button>
                   <% end %> <!-- link_to -->
                </div> <!-- class = card-body-->
             </div> <!-- class = col- 9 : btn-->
@@ -60,7 +63,7 @@
                                  <%= image_tag("#{plant_2.image}.png", :class => "img-fluid rounded-start card-img" ) %>
                               <% end %> <!-- IF : img -->
                            </div>
-                              <p class="badge bg-success rounded-pill text-primary px-3 "> <%= plant_2.name %> </p>
+                              <p class="badge bg-warning rounded-pill text-dark px-3 "> <%= plant_2.name %> </p>
                         <% end %> <!-- link_to-->
                      <% end %> <!-- IF -->
                <% end %> <!-- plants.asociation -->

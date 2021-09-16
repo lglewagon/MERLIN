@@ -1,27 +1,34 @@
-<div class="container-fluid header header-new">
-    <div class="container d-flex flex-column align-items-center"> 
-        <div class="row px-5">
-        <h5>Calculez la superficie de votre espace</h5>
-        </div>
-        <div class="header-icon"> 
+<div class="container-fluid header header-new outer px-0 pt-3">
+    <div class="d-flex flex-row align-items-center"> 
+
+        <div class="header-icon col-4 ml-3 px-0"> 
             <%= image_tag ('illus-tool-4.svg'), class:"header-icon-image" %>
+        </div> 
+
+        <div class="ml-1 mr-4">
+        <h4 class="">Votre espace</h4>
         </div>
+
     </div> 
 </div>
 
 
 
-<div class="container mt-3 pt-5">
+<div class="container-background px-4 pt-5">
+    
+    <div class ="d-flex flex-column mb-2 align-items-center"> 
+        <button id="find-me" class="btn btn-outline-primary col-9 text-dark btn-sm"> <i class="fas fa-map-marker-alt mr-2"></i>Partager ma localisation</button>
+        <p id="status" ></p>
+        <a id="map-link" target="_blank"></a>    
+    </div>
 
-    <button id="find-me" class="btn btn-outline-primary btn-sm"> <i class="fas fa-map-marker-alt mr-2"></i>Partager ma localisation</button><br/>
-    <p id="status"></p>
-    <a id="map-link" target="_blank"></a>
 
     <%= simple_form_for (@garden) do |f| %>
+        
         <div class="form-group mb-1">
-            <strong class="ml-2"> <label for="">Le nom de votre jardin<sup class="ml-1 text-primary">*</sup></label> </strong>
+            <strong class=""> <label for="">Le nom de votre jardin<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex"> 
-              <div class="mr-1 flex-fill"> <%= f.input :name, label: false, input_html: { class:"form-control-sm px-2 font-size-sm", placeholder:"Exemple : Potager de la maison"} %></div>
+              <div class="mr-1 flex-fill"> <%= f.input :name, label: false, input_html: { class:"form-control px-3", placeholder:"Exemple : Potager de la maison"} %></div>
             </div>
         </div>
 
@@ -49,7 +56,7 @@
         <%= f.hidden_field :latitude, label: "latitude" %>
         <%= f.hidden_field :longitude, label: "longitude" %>
 
-        <div class="form-group mb-5">
+        <div class="form-group mb-4">
             <strong> <label for="formControlRange">Quelle est votre pointure ?<sup class="ml-1 text-primary">*</sup></label> </strong>
             <div class="d-flex"> 
                 <div class="mr-3"> 33</div>
@@ -58,8 +65,8 @@
             </div>
         </div>
         
-        <div class="d-flex justify-content-center form-group mb-2"> 
-            <%= f.submit "Valider", class: "btn btn-primary btn-block col-6" %>
+        <div class="d-flex justify-content-center form-group mb-3"> 
+            <%= f.submit "Valider", class: "btn btn-danger btn-block col-6 font-weight-bold " %>
         </div>
     <% end %>
 

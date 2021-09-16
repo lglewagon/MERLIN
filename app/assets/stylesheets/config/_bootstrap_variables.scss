@@ -18,7 +18,7 @@ $border-radius-sm: $border-radius !default;
 $input-font-size-sm:                    $font-size-sm;
 
 // --> Custom range : Garden > new 
-$custom-range-track-bg:             $green !default;
+$custom-range-track-bg:             $green-100 !default;
 $custom-range-track-height:         .3rem !default;
 
 
@@ -26,9 +26,12 @@ $custom-range-track-height:         .3rem !default;
 $btn-padding-x-sm:            1rem !default;
 $btn-border-radius:           $border-radius !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
+$btn-border-radius-lg:        $border-radius-sm !default;
 
 //cards
-$card-border-radius:                $border-radius !default;
+// $card-border-radius:                0 !default;
+$card-bg:                           #FFF !default;
+// $card-box-shadow:                   0px 4px 10px 1px rgba(56, 62, 63, 0.202333); !default;
 
 //badge
 $badge-font-size: .9em;

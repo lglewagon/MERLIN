@@ -1,21 +1,23 @@
-<div class="container-fluid header header-show">
-    <div class="container d-flex flex-column align-items-center"> 
-        <div class="row px-4 mb-1">
-        <h5> <%= @garden.name %></h5>
-        </div>
-        <div class="header-icon"> 
+<div class="container-fluid header px-0 pt-3">
+    <div class="d-flex flex-row align-items-center"> 
+        <div class="header-icon col-4 ml-3 px-0"> 
           <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
         </div> <!-- header-icon-->
+        <div class="row px-4 mb-1">
+        <h5> <%= @garden.name %></h5> <!--TO DO : capitalize-->
+        </div>
     </div>  
 </div>
 
-<div class="container mt-4 pt-5">
+
+
+<div class="container container-background px-4 pt-5">
 
   
 
-  <div class="d-flex mb-4">
+  <div class="d-flex mb-1">
     <h6 class="mr-2 mt-1 align-self-center"> Dimensions : </h6>
-    <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @garden.width_in_cm/100.to_f%> m X <%= @garden.length_in_cm/100.to_f%> m</span>
+    <span class="badge bg-warning text-primary rounded-pill px-3 align-self-center"> <%= @garden.width_in_cm/100.to_f%> m X <%= @garden.length_in_cm/100.to_f%> m</span>
   </div>
 
   <p class="text-muted fs-4 font-size-sm"> <small> <i class="fas fa-info"></i> Chaque carré représente une superficie 0.5m<sup>2.</sup> </small></p>  
@@ -70,8 +72,8 @@
 
   <%# Aller sur TOUS les gardens %>
   <%= link_to(gardens_path) do %>
-    <div class="d-flex justify-content-center mt-2">     
-      <button class="btn btn-primary"><i class="fas fa-check"></i> Valider </button>
+    <div class="d-flex justify-content-center mt-4">     
+      <button class="btn btn-danger"><i class="fas fa-check"></i> Valider </button>
     </div>
   <% end %>
 

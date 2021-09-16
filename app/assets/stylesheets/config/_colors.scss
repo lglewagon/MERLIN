@@ -2,7 +2,7 @@
 
 // Valeurs de gris
 
-$white:    #F1F0EE !default;
+$white:    #FAFCFF !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -11,7 +11,7 @@ $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-900: #2d3a35 !default;
 $black:    #271812 !default;
 
 $grays: (
@@ -28,26 +28,27 @@ $grays: (
 
 // Couleurs Merlin ✨
 
-$blue:    #a6d8cb9d !default;
-$brand-green:  #3A5A40 !default;
+$blue:    #C3D6DA !default;
 $purple:  #5E2BFF !default;
 $pink:    #FF5E5B !default;
 $red:     #C4876F !default;
-$orange:  #CC3F0C !default;
-$yellow:  #EDC79B !default;
-$green:   #C5D3B4 !default;
+$orange:  #ED6A5A !default;
+$yellow:  #FFBF37 !default;
+$green:   #2B8C69 !default;
 $teal:    #E1E9DC !default;
-$cyan:    #7EB2DD !default;
+$cyan:    #89A6FB !default;
+$green-darker:   #315642 !default;
+
 
 $colors: (
   "blue":       $blue,
-  "brand-green":     $brand-green,
   "purple":     $purple,
   "pink":       $pink,
   "red":        $red,
   "orange":     $orange,
   "yellow":     $yellow,
   "green":      $green,
+  "green-darker":      $green-darker,
   "teal":       $teal,
   "cyan":       $cyan,
   "white":      $white,
@@ -55,16 +56,27 @@ $colors: (
   "gray-dark":  $gray-800
 ) !default;
 
+$green-100: #D0EBDC !default;
+$green-200: tint-color($green, 60%) !default;
+$green-300: tint-color($green, 40%) !default;
+$green-400: tint-color($green, 20%) !default;
+$green-500: $green !default;
+$green-600: shade-color($green, 20%) !default;
+$green-700: shade-color($green, 40%) !default;
+$green-800: shade-color($green, 60%) !default;
+$green-900: shade-color($green, 80%) !default;
+
+
 // Bootstrap variables Theme
 
-$primary:       $brand-green !default;
+$primary:       $green !default;
 $secondary:     $cyan !default;
 $success:       $green !default;
 $info:          $blue !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
+$warning:       $green-100 !default;
+$danger:        $orange !default;
 $light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$dark:          $green-darker !default;
 
 $theme-colors: (
   "primary":    $primary,

@@ -1,28 +1,37 @@
-<div class="container-fluid header header-new">
-    <div class="container d-flex flex-column align-items-center"> 
-        <div class="row px-5 mb-2">
-          <h5>Vos jardins</h5>
-        </div>
-        <div class="header-icon"> 
+<div class="container-fluid header header-gardens px-0 pt-3">
+    <div class="d-flex flex-row align-items-center"> 
+
+        <div class="header-icon col-4 ml-3 px-0"> 
           <%= image_tag ('illus-tool-1.svg'), class:"header-icon-image" %>
         </div>
+
+        <div class="mr-4">
+          <h5>Vos potagers</h5>
+        </div>
+
     </div>  
 </div>
 
-<div class="container mt-4 pt-5"> 
+
+<div class="container container-background mt-4 pt-5"> 
 
   <% @gardens.each do |garden| %>
     <div class="card my-3">
 
       <div class="card-header"> 
-        <h6> <%= garden.name  %> </h6> 
-              <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= garden.width_in_cm/100.to_f%> m X <%= garden.length_in_cm/100.to_f%> m</span>
+        <h5 class="text-danger"> <%= garden.name  %> </h5> 
+              <span class="badge bg-warning text-primary rounded-pill px-3 align-self-center"> <%= garden.width_in_cm/100.to_f%> m X <%= garden.length_in_cm/100.to_f%> m</span>
       </div>
 
       <ul class="list-group list-group-flush">
-          <li class="list-group-item"> 
-            <span> Humidité: <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["humidity"]%> %</span>
-            <p> <i class="fas fa-thermometer-quarter"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["temperature"]%> °C</p>
+          <li class="list-group-item">
+            <div class="row justify-content-center"> 
+              <p class="col-6"> Humidité: <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["humidity"]%> %</p>
+              <p class="col-6"> <i class="fas fa-thermometer-quarter"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["temperature"]%> °C</p>         
+            </div>
+          </li>
+
+          <li class="list-group-item">
             <p> <i class="fas fa-cloud-rain"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationProbability"]%> %</p>
             <% weather_rain_type = garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]%>
             <% if weather_rain_type == 0 %>
@@ -45,19 +54,19 @@
               <%= "The precipitation type is: Ice Pellets "%><i class="fad fa-cloud-hail"></i>
             <% end %>
           </li>
+
+          
           <li class="list-group-item" > 
-            <div> 
-              <h6> <i class="fas fa-wind mr-1"></i> Vents </h6>                
-            </div> 
-            <div> 
-              <p> vitesse : <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windSpeed"]%> m/s</p>
-              <p> direction : <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windDirection"]%>°</p>                
+            <h6> <i class="fas fa-wind mr-1"></i> Vents </h6>                
+            <div class="row justify-content-center"> 
+              <p class="col-6"> <i class="fas fa-tachometer-alt"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windSpeed"]%> m/s</p>
+              <p class="col-6"> <i class="fas fa-location-arrow"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windDirection"]%>°</p>                
             </div>              
           </li>
 
       </ul> 
 
-      <div class="card-body">
+      <div class="card-body d-flex justify-content-center">  
         <%= link_to(garden_path(garden)) do %>
           <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i> Éditer </button>
         <% end %>
