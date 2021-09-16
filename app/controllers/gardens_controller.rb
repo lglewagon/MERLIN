@@ -36,7 +36,11 @@ class GardensController < ApplicationController
   def index
     @gardens = Garden.all
     @weather = @gardens.first.weather
-    @weather_rain_type = @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]
+    @weather_rain_type = []
+    @gardens.each do |garden|
+      @weather = garden.weather
+      @weather_rain_type = @weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]
+    end
   end
 
   def find_garden(id)
