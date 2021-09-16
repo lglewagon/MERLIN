@@ -14,12 +14,10 @@ class SquaresController < ApplicationController
     def show
       @square = Square.find(params[:id])
       @plant = @square.plant
-<<<<<<< HEAD
+
       @square.planting_date = Date.current
-=======
       # @square.planting_date
       @all_plants = Plant.all
->>>>>>> master
       
       @date_de_recolte = @square.planting_date + @plant.harvest_day_after_planting
       @progression = (Date.current - @square.planting_date) / (@date_de_recolte - @square.planting_date).to_f * 100
