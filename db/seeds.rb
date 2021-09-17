@@ -39,7 +39,7 @@ Plant.create!(name: "Tomate", temperature_max: 32, temperature_min: 0, associati
 puts "#{Plant.count} plants created"
 
 ## Création d'un jardin
-Garden.create!(length: 4, width: 4, shoe_size: 42 ,name: "Mont jar d'1", length_in_cm: 100,width_in_cm: 100, length_in_squares: 2,width_in_squares: 2, adress: "20 Rue des Capucins, 69001 Lyon")
+Garden.create!(length: 4, width: 4, shoe_size: 42 ,name: "Mont jar d'1", length_in_cm: 100,width_in_cm: 100, length_in_squares: 2,width_in_squares: 2, address: "20 Rue des Capucins, 69001 Lyon")
 
 puts "#{Garden.count} Garden created"
 

@@ -38,7 +38,7 @@ class GardensController < ApplicationController
   
   def index
     @gardens = Garden.all
-    @weather = @gardens.first.weather
+    # @weather = @gardens.first.weather
     @weather_rain_type = []
     @gardens.each do |garden|
       @weather = garden.weather
