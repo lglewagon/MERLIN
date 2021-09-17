@@ -24,43 +24,19 @@
       </div>
 
       <ul class="list-group list-group-flush">
-          <li class="list-group-item">
+          <li class="list-group-item pl-3">
             <div class="row justify-content-center"> 
-              <p class="col-6"> Humidité: <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["humidity"]%> %</p>
-              <p class="col-6"> <i class="fas fa-thermometer-quarter"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["temperature"]%> °C</p>         
+              <p class="col-5 mb-1"> Humidité: <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["humidity"]%>%</p>
+              <p class="col-4 mb-1"> <i class="fas fa-thermometer-quarter"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["temperature"]%>°C</p>         
+              <p class="col-3 mb-1"> <i class="fas fa-cloud-rain"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationProbability"]%>%</p>
             </div>
           </li>
-
-          <li class="list-group-item">
-            <p> <i class="fas fa-cloud-rain"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationProbability"]%> %</p>
-            <% weather_rain_type = garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["precipitationType"]%>
-            <% if weather_rain_type == 0 %>
-              <%= "Le jardin est ensoleillé " %><i class="fas fa-sun"></i>
-            <% end %>
-
-            <% if weather_rain_type == 1 %>
-              <%= "Il pleut sur le jardin "%><i class="fas fa-cloud-rain"></i>
-            <% end %>
-
-            <% if weather_rain_type == 2 %>
-            <%= "Il neige sur le jardin "%><i class="far fa-snowflake"></i>
-            <% end %>
-
-            <% if weather_rain_type == 3%>
-            <%= "Il pleut une pluie verglaçante sur le jardin "%><i class="far fa-cloud-sleet"></i>
-            <% end %>
-
-            <% if weather_rain_type == 4%>
-              <%= "Il grêle sur le jardin "%><i class="fad fa-cloud-hail"></i>
-            <% end %>
-          </li>
-
           
           <li class="list-group-item" > 
-            <h6> <i class="fas fa-wind mr-1"></i> Vents </h6>                
+            <h6> <i class="fas fa-wind mr-1"></i> Vents :</h6>                
             <div class="row justify-content-center"> 
-              <p class="col-6"> <i class="fas fa-tachometer-alt"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windSpeed"]%> m/s</p>
-              <p class="col-6"> <i class="fas fa-location-arrow"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windDirection"]%>°</p>                
+              <p class="col-6 mb-1"> <i class="fas fa-tachometer-alt"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windSpeed"]%> m/s</p>
+              <p class="col-6 mb-1"> <i class="fas fa-location-arrow"></i> <%= garden.weather["data"]["timelines"][0]["intervals"][0]["values"]["windDirection"]%>°</p>                
             </div>              
           </li>
 
@@ -68,7 +44,7 @@
 
       <div class="card-body d-flex justify-content-center">  
         <%= link_to(garden_path(garden)) do %>
-          <button class="btn btn-outline-primary btn-sm"><i class="fas fa-pencil-alt"></i> Éditer </button>
+          <button class="btn btn-outline-primary btn-sm px-4"><i class="fas fa-pencil-alt"></i> Éditer </button>
         <% end %>
       </div> <!--card-body-->
 
@@ -76,18 +52,14 @@
     </div> <!--card-->
   <% end %> <!-- garden.each -->
 
-
-
-<%= link_to(new_garden_path) do %>
-  <div class="d-flex justify-content-center mb-2">
-    <button class="btn btn-primary"><i class="fas fa-plus"></i> Créer un nouveau jardin </button>
-  </div>
-<% end %>
+  <%= link_to(new_garden_path) do %>
+    <div class="d-flex justify-content-center ">
+      <button class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Créer un nouveau jardin </button>
+    </div>
+  <% end %>
 
 </div> <!--Container-->
 
-<%# <h1>température % humidité vent en km/h</h1>
-<p>Ajouter API pour les températures</p> %>
 
 
 

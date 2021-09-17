@@ -1,19 +1,23 @@
 <div class="container mt-4 py-4 d-flex flex-column align-items-center ">
 
-    <div class="mt-3"> 
-        <%= image_tag ('app-name.svg'), class:"landing app-name mb-5" %>
+    <div class="mt-3 mb-5 d-flex flex-column align-items-center"> 
+        <%= image_tag ('app-name.svg'), class:"landing app-name mb-3" %>
+        <h5> Un coup de main verte </h5>
+    </div>
+
+    <div> 
     </div> 
 
 
     <%= link_to(new_garden_path) do %>
     <div class="d-flex justify-content-center mt-4">
-        <button class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> Créer un nouveau jardin </button>
+        <button class="btn btn-danger btn-lg"><i class="fas fa-plus"></i> Créer un nouveau jardin </button>
     </div>
     <% end %>
 
 
     <svg class="landing-blob svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#FF834D" d="M51.8,-19.9C59.1,5.6,51.4,32.9,33.6,45.6C15.9,58.4,-12,56.6,-31.3,42.7C-50.6,28.7,-61.4,2.6,-54.8,-22C-48.1,-46.6,-24.1,-69.8,-0.9,-69.5C22.3,-69.2,44.5,-45.5,51.8,-19.9Z" transform="translate(100 100)" />
+    <path fill="#b1d8c2" d="M51.8,-19.9C59.1,5.6,51.4,32.9,33.6,45.6C15.9,58.4,-12,56.6,-31.3,42.7C-50.6,28.7,-61.4,2.6,-54.8,-22C-48.1,-46.6,-24.1,-69.8,-0.9,-69.5C22.3,-69.2,44.5,-45.5,51.8,-19.9Z" transform="translate(100 100)" />
     </svg>
 
      <div class="landing-logo fixed-bottom"> 
