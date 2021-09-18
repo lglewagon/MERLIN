@@ -4,7 +4,7 @@
           <%= image_tag ('illus-tool-3.svg'), class:"header-icon-image" %>
         </div> <!-- header-icon-->
         <div class="row px-4 mb-1">
-        <h5> <%= @garden.name %></h5> <!--TO DO : capitalize-->
+          <h3 class="pt-2"> <%= @garden.name %></h3> 
         </div>
     </div>  
 </div>
@@ -17,7 +17,7 @@
 
   <div class="d-flex mb-1">
     <h6 class="mr-2 mt-1 align-self-center"> Dimensions : </h6>
-    <span class="badge bg-warning text-primary rounded-pill px-3 align-self-center"> <%= @garden.width_in_cm/100.to_f%> m X <%= @garden.length_in_cm/100.to_f%> m</span>
+    <span class="badge bg-warning text-primary rounded-pill px-3 align-self-center"> <%= @garden.width_in_cm/100.to_f%>m x <%= @garden.length_in_cm/100.to_f%>m</span>
   </div>
 
   <p class="text-muted fs-4 font-size-sm"> <small> <i class="fas fa-info"></i> Chaque carré représente une superficie de 0.5m<sup>2.</sup> </small></p>
