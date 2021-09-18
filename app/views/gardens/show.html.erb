@@ -13,8 +13,6 @@
 
 <div class="container-background px-4 pt-5">
 
-  
-
   <div class="d-flex mb-1">
     <h6 class="mr-2 mt-1 align-self-center"> Dimensions : </h6>
     <span class="badge bg-warning text-primary rounded-pill px-3 align-self-center"> <%= @garden.width_in_cm/100.to_f%>m x <%= @garden.length_in_cm/100.to_f%>m</span>
@@ -68,15 +66,11 @@
     </div>
   </div> <!-- class : garden -->
 
-
-
   <%# Aller sur TOUS les gardens %>
   <%= link_to(gardens_path) do %>
     <div class="d-flex justify-content-center mt-4">     
       <button class="btn btn-danger"><i class="fas fa-check"></i> Valider </button>
     </div>
   <% end %>
-
-  <%# Lien pour éditer --> garden new %>
 
 </div> <!-- @end container body-->
