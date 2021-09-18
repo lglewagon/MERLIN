@@ -3,29 +3,29 @@
       "timelines": [
         {
           "timestep": "1d",
-          "startTime": "2021-08-31T06:00:00Z",
-          "endTime": "2021-09-14T06:00:00Z",
+          "startTime": "2021-09-18T04:00:00Z",
+          "endTime": "2021-10-02T04:00:00Z",
           "intervals": [
             {
-              "startTime": "2021-08-31T06:00:00Z",
+              "startTime": "2021-09-18T04:00:00Z",
               "values": {
-                "humidity": 88,
-                "precipitationProbability": 0,
+                "humidity": 96,
+                "precipitationProbability": 75,
                 "precipitationType": 1,
-                "temperature": 24.81,
-                "windSpeed": 5.71,
-                "windDirection": 91.5
+                "temperature": 24.48,
+                "windSpeed": 4.17,
+                "windDirection": 163.72
               }
             },
             {
-              "startTime": "2021-09-01T06:00:00Z",
+              "startTime": "2021-09-19T04:00:00Z",
               "values": {
-                "humidity": 79.53,
-                "precipitationProbability": 5,
+                "humidity": 89.59,
+                "precipitationProbability": 50,
                 "precipitationType": 1,
-                "temperature": 24.77,
-                "windSpeed": 9.7,
-                "windDirection": 80.6
+                "temperature": 17.94,
+                "windSpeed": 2.73,
+                "windDirection": 176.19
               }
             },
             {
