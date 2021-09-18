@@ -1,4 +1,4 @@
-<div class=" container pt-5 header-square-show"> <!--TO DO fixer les fleches -->
+<div class="pt-5 header-square-show"> <!--TO DO fixer les fleches -->
     <div class="d-flex flex-column align-items-center ">
       <div class="row justify-content-center mb-2">
           <%= link_to square_path(@square.previous) do%>
@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<div class="container pt-3">
+<div class="container pt-2">
 
   <div class="d-flex flex-row flex-wrap justify-content-center mb-3">
    <h6 class = "mr-3"> T° min : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_min %>°C </span> </h6>

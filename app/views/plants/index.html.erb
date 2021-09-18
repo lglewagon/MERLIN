@@ -12,13 +12,13 @@
 </div>
 
 
-<div class="container container-background px-4 pt-5">
+<div class="container-background px-4 pt-5">
     <form action= "<%= garden_plants_path %>" method = "get">
-      <div class="search-form-control form-group">
+      <div class="search-form-control form-group d-flex row justify-content-center">
          <input type="hidden" name="square_id" id="square_id" value="<%= params[:square_id] %>" />
-         <input class="form-control string required" type="text" name="query" id="query" value="<%= params[:query] %>"/>
-         <button type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i> Search
+         <input class="form-control string required col-9 mr-2" type="text" placeholder="Search" name="query" id="query" value="<%= params[:query] %>"/>
+         <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>
          </button>
       </div>
     </form>
@@ -40,7 +40,7 @@
                <div class="card-body">
                   <h6 class="card-title"><%= plant.name %></h6>                 
                   <%= link_to square_path(id: params[:square_id], plant_id: plant.id, planting_date: Date.current), method: 'patch' do %>
-                     <button class="btn btn-danger btn-sm"> <i class="fas fa-plus"></i> Ajouter à mon potager </button>
+                     <button class="btn btn-danger btn-sm px-2"> <i class="fas fa-plus"></i> Ajouter à mon potager </button>
                   <% end %> <!-- link_to -->
                </div> <!-- class = card-body-->
             </div> <!-- class = col- 9 : btn-->

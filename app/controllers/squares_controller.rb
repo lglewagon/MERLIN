@@ -16,7 +16,7 @@ class SquaresController < ApplicationController
       @plant = @square.plant
       @garden_id = @square.garden_id
 
-      @square.planting_date = Date.current
+      # @square.planting_date = Date.current
       # @square.planting_date
       @all_plants = Plant.all
       
