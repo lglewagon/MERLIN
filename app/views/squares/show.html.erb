@@ -76,7 +76,7 @@
     </div> <!-- d-flex flex-row -->
   </div>
 
-  <%= link_to(garden_plant_path(@garden_id, @plant.id), method: :delete) do  %> <!-- ***TO DO*** -->
+  <%= link_to(garden_plant_path(@garden_id, @plant.id), method: :delete, { confirm: "Êtes-vous sûr de vouloir supprimer cette plante ?" }) do  %> <!-- ***TO DO*** -->
       <div class="d-flex justify-content-center my-2 pb-2">
       <button class="btn btn-outline-primary btn-sm text-dark"><i class="far fa-trash-alt mr-2"></i> Supprimer ma plante </button>
       </div>
