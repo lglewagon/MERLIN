@@ -12,8 +12,8 @@ Garden.destroy_all
 Plant.destroy_all
 
 ## Création de toutes les plantes
-Plant.create!(name: "Abricot", temperature_max: 32, temperature_min: 0, associations: ["Basilic", "Carottes", "Fraises"], harvest_day_after_planting: 25, length: 5, width: 5, sunshine: 2, image: 'Abricot')
-Plant.create!(name: "Ail", temperature_max: 32, temperature_min: 0, associations: ["Carottes", "Fraises", "Laitue", "Oignon", "Patate", "Tomate"], harvest_day_after_planting: 35, length: 5, width: 5, sunshine: 2, image: 'Ail')
+abricot = Plant.create!(name: "Abricot", temperature_max: 32, temperature_min: 0, associations: ["Basilic", "Carottes", "Fraises"], harvest_day_after_planting: 25, length: 5, width: 5, sunshine: 2, image: 'Abricot')
+ail= Plant.create!(name: "Ail", temperature_max: 32, temperature_min: 0, associations: ["Carottes", "Fraises", "Laitue", "Oignon", "Patate", "Tomate"], harvest_day_after_planting: 35, length: 5, width: 5, sunshine: 2, image: 'Ail')
 Plant.create!(name: "Artichaut", temperature_max: 32, temperature_min: 0, associations: ["Laitue", "Pois", "Oignon"], harvest_day_after_planting: 60, length: 5, width: 5, sunshine: 2, image: 'Artichaut')
 Plant.create!(name: "Asperge", temperature_max: 32, temperature_min: 0, associations: ["Laitue", "Pois", "Tomate"], harvest_day_after_planting: 90, length: 5, width: 5, sunshine: 2, image: 'Asperge')
 Plant.create!(name: "Basilic", temperature_max: 32, temperature_min: 0, associations: ["Tomate", "Chou", "Asperge"], harvest_day_after_planting: 120, length: 5, width: 5, sunshine: 2, image: 'Basilic')
@@ -39,12 +39,12 @@ Plant.create!(name: "Tomate", temperature_max: 32, temperature_min: 0, associati
 puts "#{Plant.count} plants created"
 
 ## Création d'un jardin
-Garden.create!(length: 4, width: 4, shoe_size: 42 ,name: "Mont jar d'1", length_in_cm: 100,width_in_cm: 100, length_in_squares: 2,width_in_squares: 2, address: "20 Rue des Capucins, 69001 Lyon")
+garden = Garden.create!(length: 4, width: 4, shoe_size: 42 ,name: "Mont jar d'1", length_in_cm: 100,width_in_cm: 100, length_in_squares: 2,width_in_squares: 2, address: "20 Rue des Capucins, 69001 Lyon")
 
 puts "#{Garden.count} Garden created"
 
 ## Création de Squares dans le jardin créé
-Square.create!(planting_date: "24/08/2021", garden_id: 1, plant_id: 1)
-Square.create!(planting_date: "24/07/2021", garden_id: 1, plant_id: 2)
+Square.create!(planting_date: "24/08/2021", garden_id: garden.id, plant_id: abricot.id)
+Square.create!(planting_date: "24/07/2021", garden_id: garden.id, plant_id: ail.id)
 
 puts "#{Square.count} Squares created"
