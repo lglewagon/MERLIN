@@ -1,5 +1,5 @@
 class Garden < ApplicationRecord
-    has_many :squares
+    has_many :squares, dependent: :destroy
     geocoded_by :address
     after_validation :geocode
     validates_presence_of :name

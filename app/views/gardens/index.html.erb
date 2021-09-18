@@ -49,8 +49,8 @@
             <button class="btn btn-outline-primary btn-sm px-4 mx-2"><i class="fas fa-pencil-alt"></i> Éditer </button>
           <% end %>
 
-          <%= link_to(garden_path(garden)) do %>
-            <button class="btn btn-outline-primary btn-sm px-4 mx-2"><i class="far fa-trash-alt mr-2"></i> Supprimer </button>
+          <%= link_to(garden_path(garden.id), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer ce jardin ?" }) do %>
+          <button class="btn btn-outline-primary btn-sm px-4 mx-2"><i class="far fa-trash-alt mr-2"></i> Supprimer </button>
           <% end %>
         </div> <!--card-body-->
 
