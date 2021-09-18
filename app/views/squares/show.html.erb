@@ -1,5 +1,5 @@
 <div class=" container pt-5 header header-square-show"> <!--TO DO fixer les fleches -->
-    <div class="d-flex flex-column align-items-center "> 
+    <div class="d-flex flex-column align-items-center ">
       <div class="row justify-content-center mb-2">
           <%= link_to square_path(@square.previous) do%>
             <h5> <i class="fas fa-angle-left text-danger"></i></h5>
@@ -31,47 +31,47 @@
       </div>
 
 
-    </div>  
+    </div>
 </div>
 
 <div class="container pt-3">
-  
+
   <div class="d-flex flex-row flex-wrap justify-content-center mb-3">
    <h6 class = "mr-3"> T° min : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_min %>°C </span> </h6>
    <h6> T° max : <span class="badge bg-primary rounded-pill text-white px-3 align-self-center"> <%= @plant.temperature_max %>°C </span></h6>
   </div>
-  
+
   <div class="row justify-content-center">
     <div class="my-3 card col-5 mx-2 px-2">
-      <div class="card-body px-1"> 
-        <p class="mb-1 card-title "> <i class="fas fa-birthday-cake text-danger mr-1"></i> Plantée le : </p> 
+      <div class="card-body px-1">
+        <p class="mb-1 card-title "> <i class="fas fa-birthday-cake text-danger mr-1"></i> Plantée le : </p>
         <p class="card-text font-weight-bold text-center"><%= @square.planting_date.to_formatted_s(:rfc822) %></p>
-      </div> 
+      </div>
     </div>
     <div class="my-3 card col-5 mx-2 px-2 h-50">
-      <div class="card-body px-1"> 
+      <div class="card-body px-1">
         <p class="mb-1 card-title" > <i class="fab fa-pagelines text-danger mr-1"></i> Récolte ≈ </p>
         <p class="card-text font-weight-bold text-center"> <%= @date_de_recolte.strftime("%b %Y") %></p>
-      </div> 
+      </div>
     </div>
-  </div> <!-- row -->  
+  </div> <!-- row -->
 
   <div class="pt-3">
     <h6 class="text-center"> Associations conseillées à proximité <br>de cette plante : </h6>
-    <div class="d-flex flex-row flex-wrap px-0 justify-content-center"> 
+    <div class="d-flex flex-row flex-wrap px-0 justify-content-center">
       <% @plant.associations.each do |association| %>
-          <div class="col-3 mx-2 d-flex flex-column align-items-center px-0"> 
+          <div class="col-3 mx-2 d-flex flex-column align-items-center px-0">
             <% if File.file? "#{Rails.root}/app/assets/images/#{association}.jpg" %>
                 <%= image_tag("#{association}.jpg", :class => "img-fluid rounded-start card-img" ) %>
             <% elsif File.file? "#{Rails.root}/app/assets/images/#{association}.png" %>
                 <%= image_tag("#{association}.png", :class => "img-fluid rounded-start card-img" ) %>
-            <% end %> <!-- IF : img -->        
-            <div> 
+            <% end %> <!-- IF : img -->
+            <div>
               <p class="badge bg-warning rounded-pill text-dark px-3"> <%= association %> </p>
             </div>
           </div>
       <% end %>
-    </div> <!-- d-flex flex-row --> 
+    </div> <!-- d-flex flex-row -->
   </div>
 
   <%= link_to(gardens_path) do %> <!-- ***TO DO*** -->

@@ -10,42 +10,19 @@ require("@rails/activestorage").start()
 require("channels")
 import { geoFindMe } from "../components/geolocalisation"
 
-$(function() {
-  $(".progress").each(function() {
-    var value = $(this).attr('data-value');
-    var left = $(this).find('.progress-left .progress-bar');
-    var right = $(this).find('.progress-right .progress-bar');
-    if (value > 0) {
-      if (value <= 50) {
-        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-      } else {
-        right.css('transform', 'rotate(180deg)')
-        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-      }
-    }
-  })
-  function percentageToDegrees(percentage) {
-    return percentage / 100 * 360
-  }
-});
-
-
 document.addEventListener("turbolinks:load", function() {
     const findMeButton = document.querySelector('#find-me')
     console.log(findMeButton);
+    // ------> Afficher la valeur du range de garden new
+
     if (findMeButton) {
         findMeButton.addEventListener('click', geoFindMe);
     };
-})
-
-// ------> Afficher la valeur du range de garden new
-document.addEventListener('DOMContentLoaded', function() {
-
     var slider = document.getElementById("garden_width"); // input
     var displayer = document.getElementById("widthValue"); // div !
 
     displayer.innerText = slider.value
- 
+
     slider.addEventListener("change", function() {
         var value = slider.value
         displayer.innerText = value
@@ -55,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var displayer2 = document.getElementById("lengthValue"); // div !
 
     displayer2.innerText = slider2.value
- 
+
     slider2.addEventListener("change", function() {
         var value = slider2.value
         displayer2.innerText = value
@@ -65,14 +42,30 @@ document.addEventListener('DOMContentLoaded', function() {
     var displayer3 = document.getElementById("shoeSizeValue"); // div !
 
     displayer3.innerText = slider3.value
- 
+
     slider3.addEventListener("change", function() {
         var value = slider3.value
         displayer3.innerText = value
     })
+    $(function() {
+      $(".progress").each(function() {
+        var value = $(this).attr('data-value');
+        var left = $(this).find('.progress-left .progress-bar');
+        var right = $(this).find('.progress-right .progress-bar');
+        if (value > 0) {
+          if (value <= 50) {
+            right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+          } else {
+            right.css('transform', 'rotate(180deg)')
+            left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+          }
+        }
+      })
+      function percentageToDegrees(percentage) {
+        return percentage / 100 * 360
+      }
+    });
 })
-
-
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
