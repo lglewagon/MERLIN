@@ -14,6 +14,7 @@ class SquaresController < ApplicationController
     def show
       @square = Square.find(params[:id])
       @plant = @square.plant
+      @garden_id = @square.garden_id
 
       # @square.planting_date = Date.current
       # @square.planting_date
